@@ -7,4 +7,18 @@ class LittleShopApp < Sinatra::Base
     erb :dashboard
   end
 
+  get '/merchants' do
+    @merchants = Merchant.all
+    erb :"merchants/index"
+  end
+
+  get '/merchants/new' do
+    erb :"merchants/new"
+  end
+
+  post '/merchants' do
+    Merchant.create(params[:merchant])
+    redirect '/merchants'
+  end
+
 end
