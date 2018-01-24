@@ -1,0 +1,6 @@
+<form action="/categories/<%= @category.id %>" method="POST">
+  <p>Edit</p>
+  <input type="hidden" name="_method" value="PUT" />
+  <input type='text' name='category[name]' value="<%= @category.name %>"/><br/>
+  <input type='submit'/>
+</form>

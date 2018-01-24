@@ -45,4 +45,40 @@ class LittleShopApp < Sinatra::Base
     redirect '/merchants'
   end
 
+  get '/categories' do
+    @categories = Category.all
+    erb :"categories/index"
+  end
+
+  # get '/merchants/new' do
+  #   erb :"merchants/new"
+  # end
+  #
+  # get '/merchants/:id' do
+  #   @merchant = Merchant.find_by(id: params[:id])
+  #   erb :"merchants/show"
+  # end
+  #
+  # get '/merchants/:id/edit' do
+  #   @merchant = Merchant.find_by(id: params[:id])
+  #   erb :"merchants/edit"
+  # end
+  #
+  # post '/merchants' do
+  #   Merchant.create(params[:merchant])
+  #   redirect '/merchants'
+  # end
+  #
+  # put '/merchants/:id' do
+  #   merchant = Merchant.find_by(id: params[:id])
+  #   merchant.update(name: params[:merchant].values.first)
+  #   redirect "/merchants/#{merchant.id}"
+  # end
+  #
+  # delete '/merchants/:id' do
+  #   merchant = Merchant.find_by(id: params[:id])
+  #   merchant.destroy
+  #   redirect '/merchants'
+  # end
+
 end
