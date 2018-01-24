@@ -29,5 +29,4 @@ RSpec.describe Merchant do
       expect(Merchant.count).to eq 475
     end
   end
-
 end
