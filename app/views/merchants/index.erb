@@ -1,5 +1,6 @@
 <h1>All Merchants</h1>
 
 <% @merchants.each do |merchant| %>
+<h3><a href="/merchants/<%= merchant.id %>"><%= merchant.id %></a></h3>
   <p><%= merchant.name %></p>
 <% end %>
