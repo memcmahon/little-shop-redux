@@ -1,4 +1,3 @@
-require_relative "../models/merchant.rb"
 require 'pry'
 
 class LittleShopApp < Sinatra::Base
@@ -45,4 +44,39 @@ class LittleShopApp < Sinatra::Base
     redirect '/merchants'
   end
 
+  get '/categories' do
+    @categories = Category.all
+    erb :"categories/index"
+  end
+
+  get '/categories/new' do
+    erb :"categories/new"
+  end
+
+  get '/categories/:id' do
+    @category = Category.find_by(id: params[:id])
+    erb :"categories/show"
+  end
+
+  get '/categories/:id/edit' do
+    @category = Category.find_by(id: params[:id])
+    erb :"categories/edit"
+  end
+
+  post '/categories' do
+    Category.create(params[:category])
+    redirect '/categories'
+  end
+
+  put '/categories/:id' do
+    category = Category.find_by(id: params[:id])
+    category.update(name: params[:category].values.first)
+    redirect "/categories/#{category.id}"
+  end
+
+  delete '/categories/:id' do
+    category = Category.find_by(id: params[:id])
+    category.destroy
+    redirect '/categories'
+  end
 end
