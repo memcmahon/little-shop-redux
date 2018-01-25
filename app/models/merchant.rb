@@ -1,4 +1,4 @@
 class Merchant < ActiveRecord::Base
-  validates :id, :name, presence: true
+  validates :name, presence: true
 
 end
