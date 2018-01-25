@@ -80,5 +80,4 @@ class LittleShopApp < Sinatra::Base
     category.destroy
     redirect '/categories'
   end
-
 end
