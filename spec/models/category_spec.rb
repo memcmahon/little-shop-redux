@@ -5,9 +5,9 @@ require 'csv'
 RSpec.describe Category do
   describe "Validations" do
     it "is invalid without a name" do
-      merchant = Category.create
+      category = Category.create
 
-      expect(merchant).to_not be_valid
+      expect(category).to_not be_valid
     end
   end
 
