@@ -3,3 +3,9 @@
 <h1><%= @category.name %></h1>
 
 <p><%= @category.id %></p>
+
+<a href="/categories/<%= @category.id  %>/edit">Edit</a>
+<form action="/categories/<%= @category.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="delete"/>
+</form>
