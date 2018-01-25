@@ -1,4 +1,3 @@
-require_relative "../models/merchant.rb"
 require 'pry'
 
 class LittleShopApp < Sinatra::Base
