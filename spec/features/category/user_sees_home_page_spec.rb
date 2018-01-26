@@ -21,5 +21,5 @@ describe "user sees home page" do
         click_link 'Item Index'
       end
     end
-  end
+  end 
 end
