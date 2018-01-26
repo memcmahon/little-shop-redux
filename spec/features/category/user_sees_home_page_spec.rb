@@ -4,24 +4,44 @@ describe "user sees home page" do
   context "visit root page" do
     it "shows the dashboard" do
       visit '/'
+
       expect(current_path).to eq('/')
-      within("header") do
+        within("header") do
         expect(page).to have_content('Welcome')
       end
     end
   end
 
-  context "user can navigate from root to indexes" do
-    it "has links for indexes" do
+  context "user can navigate from root to merchant index" do
+    it "has functional link for merchants" do
       visit '/'
+
       expect(current_path).to eq('/')
       within("nav") do
         click_link 'Merchant Index'
-          expect(current_path).to eq('/merchants')
+        expect(current_path).to eq('/merchants')
+      end
+    end
+  end
+
+  context "user can navigate from root to category index" do
+    it "has functional link for categories" do
+      visit '/'
+
+      within("nav") do
         click_link 'Category Index'
-          expect(current_path).to eq('/categories')
+        expect(current_path).to eq('/categories')
+      end
+    end
+  end
+
+  context "user can navigate from root to item index" do
+    it "has functional link for items" do
+      visit '/'
+
+      within("nav") do
         click_link 'Item Index'
-          expect(current_path).to eq('/indexes')
+        expect(current_path).to eq('/items')
       end
     end
   end

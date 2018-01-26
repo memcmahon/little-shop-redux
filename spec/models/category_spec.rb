@@ -11,16 +11,14 @@ RSpec.describe Category do
     end
   end
 
-  # describe "Database Builder" do
-  #   it "loads csv files" do
-  #     merchants = CSV.open("data/merchants.csv", headers: true, header_converters: :symbol)
-  #     merchants.each do |row|
-  #       Merchant.create(id:         row[:id],
-  #                       name:       row[:id],
-  #                       created_at: row[:created_at],
-  #                       updated_at:  row[:updated_at])
-  #     end
-  #     expect(Merchant.count).to eq 475
-  #   end
-  # end
+  describe "Database Builder" do
+    it "loads csv files" do
+      categories = CSV.open("data/categories.csv", headers: true, header_converters: :symbol)
+      categories.each do |row|
+        Category.create(name: row[:name])
+      end
+      expect(Category.count).to eq 7
+      expect(Category.first.name).to eq "Sleepy"
+    end
+  end
 end
