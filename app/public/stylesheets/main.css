@@ -59,3 +59,8 @@ footer {
   grid-template-rows: 20% 20% 20% 20% 20%;
   margin: 10px;
 }
+
+/*.create-form {
+  display: flex;
+  justify-content: center;
+}*/

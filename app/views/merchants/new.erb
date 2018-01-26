@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <title>Shop With No Name</title>
     <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheets/main.css" title="text/css" />
+    <link rel="stylesheet" href="/stylesheets/main.css" title="text/css" />
   </head>
 
   <body>
@@ -13,11 +13,23 @@
       <h1>Create New Merchant</h1>
     </header>
 
-    <form action="/merchants" method="post">
-      <p>Enter a new merchant:</p>
-      <input type='text' name='merchant[name]'/><br/>
-      <input type='submit'/>
-    </form>
+    <nav>
+        <a href="/merchants">Merchant Index</a>
+        <a href="/categories">Category Index</a>
+        <a href="/items">Item Index</a>
+    </nav>
+
+    <section class="create-form">
+      <form action="/merchants" method="post">
+        <p>Create a new merchant:</p>
+        <input type='text' name='merchant[name]' value="Name"/><br/><br/>
+        <input type='submit'/>
+      </form>
+    </section>
+
+    <footer>
+      <p>Email Us: <a href="mailto:fakeaddress@gmail.com">HR@shopwithnoname.com<a></p>
+    </footer>
 
   </body>
 </html>
