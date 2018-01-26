@@ -17,9 +17,12 @@ describe "user sees home page" do
       expect(current_path).to eq('/')
       within("nav") do
         click_link 'Merchant Index'
+          expect(current_path).to eq('/merchants')
         click_link 'Category Index'
+          expect(current_path).to eq('/categories')
         click_link 'Item Index'
+          expect(current_path).to eq('/indexes')
       end
     end
-  end 
+  end
 end
