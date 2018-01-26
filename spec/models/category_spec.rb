@@ -18,6 +18,7 @@ RSpec.describe Category do
         Category.create(name: row[:name])
       end
       expect(Category.count).to eq 7
+      expect(Category.first.name).to eq "Sleepy"
     end
   end
 end
