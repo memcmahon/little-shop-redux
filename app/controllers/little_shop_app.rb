@@ -28,7 +28,6 @@ class LittleShopApp < Sinatra::Base
   end
 
   post '/merchants' do
-    binding.pry
     Merchant.create(params[:merchant])
     redirect '/merchants'
   end
