@@ -40,3 +40,22 @@ footer {
   height: 30px;
   width: 100%;
 }
+
+.create-new {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.body-link {
+  font-weight: bold;
+  font-size: 20px;
+  color: rgb(47,72,88);
+}
+
+.display-grid {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+  margin: 10px;
+}
