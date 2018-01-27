@@ -11,6 +11,22 @@ RSpec.describe Merchant do
     end
   end
 
+  describe "Primary Key Creation" do
+    xit "can be autoincremented" do
+      merchant = Merchant.create(name: "Molly")
+
+      expect(merchant.id).to eq(1)
+      expect(Merchant.find(1)).to eq(merchant)
+    end
+
+    it "can be specified when created" do
+      merchant = Merchant.create(id: 123, name: "Molly")
+
+      expect(merchant.id).to eq(123)
+      expect(Merchant.find(123)).to eq(merchant)
+    end
+  end
+
   describe "Database Builder" do
     it "loads csv files" do
       merchants = CSV.open("data/merchants.csv", headers: true, header_converters: :symbol)
