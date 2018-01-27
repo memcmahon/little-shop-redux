@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Shop With No Name</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/main.css" title="text/css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Items</h1>
+    </header>
+
+    <nav>
+        <a href="/">Home</a>
+        <a href="/merchants">Merchant Index</a>
+        <a href="/categories">Category Index</a>
+    </nav>
+
+    <section class='create-new'>
+      <a class='body-link' href='/items/new'>Create New Item</a>
+    </section>
+
+    <section class="display-grid">
+      <% @items.each do |item| %>
+        <div>
+        <h3><a class='body-link' href="/items/<%= item.id %>"><%= item.title %></a></h3>
+          <img src="<%= item.image %>">
+          <a href="/items/<%= item.id  %>/edit">Edit</a>
+          <form action="/items/<%= item.id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="delete"/>
+          </form>
+        </div>
+      <% end %>
+    </section>
+
+    <footer>
+      <p>Email Us: <a href="mailto:fakeaddress@gmail.com">HR@shopwithnoname.com<a></p>
+    </footer>
+
+    <div>
+    </div>
+  </body>
+</html>

@@ -79,4 +79,44 @@ class LittleShopApp < Sinatra::Base
     category.destroy
     redirect '/categories'
   end
+
+  get '/items' do
+    @items = Item.all
+    erb :"items/index"
+  end
+
+  get '/items/new' do
+    @merchants = Merchant.all
+    @categories = Category.all
+    erb :"items/new"
+  end
+
+  get '/items/:id' do
+    @item = Item.find(params[:id])
+    erb :"items/show"
+  end
+
+  get '/items/:id/edit' do
+    @item = Item.find(params[:id])
+    @merchants = Merchant.all
+    @categories = Category.all
+    erb :"items/edit"
+  end
+
+  post '/items' do
+    Item.create(params[:item])
+    redirect '/items'
+  end
+
+  put '/items/:id' do
+    item = Item.find(params[:id])
+    item.update(params[:item])
+    redirect "/items/#{item.id}"
+  end
+
+  delete '/items/:id' do
+    item = Item.find(params[:id])
+    item.destroy
+    redirect '/items'
+  end
 end

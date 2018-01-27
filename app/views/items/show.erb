@@ -1,0 +1,14 @@
+<a href="/items">Item Index</a>
+
+<h1><%= @item.title %></h1>
+<p><%= @item.description %></p>
+<p><%= @item.price %></p>
+<p><a href="<%= @item.image %>"></p>
+<p><%= @item.merchant_id %></p>
+<p><%= @item.category_id %></p>
+
+<a href="/items/<%= @item.id  %>/edit">Edit</a>
+<form action="/items/<%= @item.id %>" method="POST">
+  <input type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="delete"/>
+</form>
