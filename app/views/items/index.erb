@@ -29,7 +29,7 @@
         <h3><a class='body-link' href="/items/<%= item.id %>"><%= item.title %></a></h3>
           <img src="<%= item.image %>">
           <a href="/items/<%= item.id  %>/edit">Edit</a>
-          <form action="/items/<%= item.id %>" method="POST">
+          <form id='delete' action="/items/<%= item.id %>" method="POST">
             <input type="hidden" name="_method" value="DELETE">
             <input type="submit" value="delete"/>
           </form>

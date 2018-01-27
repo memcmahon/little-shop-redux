@@ -34,6 +34,7 @@ class LittleShopApp < Sinatra::Base
 
   put '/merchants/:id' do
     merchant = Merchant.find_by(id: params[:id])
+    binding.pry
     merchant.update(name: params[:merchant][:name])
     redirect "/merchants/#{merchant.id}"
   end
@@ -104,7 +105,8 @@ class LittleShopApp < Sinatra::Base
   end
 
   post '/items' do
-    Item.create(params[:item])
+    x = Item.create(params[:item])
+    # binding.pry
     redirect '/items'
   end
 
