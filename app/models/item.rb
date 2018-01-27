@@ -7,4 +7,6 @@ class Item < ActiveRecord::Base
             :category_id,
             presence: true
 
+  belongs_to :merchant
+  belongs_to :category
 end
