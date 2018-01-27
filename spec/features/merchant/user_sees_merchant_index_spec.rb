@@ -26,7 +26,6 @@ describe "user sees merchant index" do
       click_link('Sally')
 
       expect(current_path).to eq("/merchants/#{merchant_1.id}")
-      expect(page).to have_content("Sally")
     end
   end
 
