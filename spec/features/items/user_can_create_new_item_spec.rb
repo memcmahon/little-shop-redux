@@ -2,7 +2,7 @@ require 'pry'
 
 describe "user can create new item" do
   context "visits create new item" do
-    xit "adds item to item index" do
+    it "adds item to item index" do
       item_1 = Item.create(title: "socks",
                            description: "100% merino wool",
                            price: 2299,
@@ -28,13 +28,13 @@ describe "user can create new item" do
       click_button('new-submit')
       new_item = Item.find_by(title: 'hat')
 
-      binding.pry
+      # binding.pry
       expect(current_path).to eq('/items')
       expect(Item.all.count).to eq(3) # <---- actual 2
       expect(page).to have_content('hat')
-      expect(item.id).to eq(3)
-      expect(item.merchant.name).to eq('Jose')
-      expect(item.category.name).to eq('Dopey')
+      expect(new_item.id).to eq(3)
+      expect(new_item.merchant.name).to eq('Jose')
+      expect(new_item.category.name).to eq('Dopey')
     end
   end
 end

@@ -2,7 +2,7 @@ require 'pry'
 
 describe "user can edit existing merchant" do
   context "visits merchant edit page" do
-    xit "edits the name of the merchant" do
+    it "edits the name of the merchant" do
       merchant_1 = Merchant.create(id: 123, name: "Sally")
       merchant_2 = Merchant.create(id: 456, name: "Billy")
 

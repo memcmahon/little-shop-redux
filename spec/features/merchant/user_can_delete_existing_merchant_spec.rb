@@ -2,7 +2,7 @@ require 'pry'
 
 describe "user can delete existing merchant from index" do
   context "visits merchant index page" do
-    xit "deletes an individual merchant" do
+    it "deletes an individual merchant" do
       merchant_1 = Merchant.create(id: 123, name: "Sally")
       merchant_2 = Merchant.create(id: 456, name: "Billy")
 
@@ -18,7 +18,7 @@ describe "user can delete existing merchant from index" do
   end
 
   context "visits individual merchant page" do
-    xit "deletes the individual merchant" do
+    it "deletes the individual merchant" do
       merchant_1 = Merchant.create(id: 123, name: "Sally")
       merchant_2 = Merchant.create(id: 456, name: "Billy")
 
