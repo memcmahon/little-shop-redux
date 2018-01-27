@@ -66,7 +66,7 @@ RSpec.describe Item do
   end
 
   describe "has correct links" do
-    xit "is linked to a merchant object" do
+    it "is linked to a merchant object" do
       item = Item.create(title: "soggy socks",
                          description: "yikes my feet are wet!",
                          price: 1099,
@@ -75,6 +75,7 @@ RSpec.describe Item do
                          category_id: 7)
       merchant = Merchant.create(id: 12334145, name: "BowlsByChris")
 
+      require 'pry'; binding.pry
       expect(item.merchant).to be_an_instance_of Merchant
       expect(item.merchant.name).to eq "BowlsByChris"
     end
