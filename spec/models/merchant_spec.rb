@@ -12,7 +12,7 @@ RSpec.describe Merchant do
   end
 
   describe "Primary Key Creation" do
-    xit "can be autoincremented" do
+    it "can be autoincremented" do
       merchant = Merchant.create(name: "Molly")
 
       expect(merchant.id).to eq(1)

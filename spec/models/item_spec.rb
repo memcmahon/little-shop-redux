@@ -75,7 +75,6 @@ RSpec.describe Item do
                          category_id: 7)
       merchant = Merchant.create(id: 12334145, name: "BowlsByChris")
 
-      require 'pry'; binding.pry
       expect(item.merchant).to be_an_instance_of Merchant
       expect(item.merchant.name).to eq "BowlsByChris"
     end
