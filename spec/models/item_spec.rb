@@ -92,4 +92,24 @@ RSpec.describe Item do
       expect(item.category.name).to eq "Sleepy"
     end
   end
+
+  describe "Database Builder" do
+    it "loads csv files" do
+      items = CSV.open("data/items.csv", headers: true, header_converters: :symbol)
+      items.each do |row|
+        Item.create(id:           row[:id],
+                    title:        row[:name],
+                    description:  row[:description],
+                    price:        row[:price].to_i,
+                    image:        "http://www.yourwdwstore.net/thumbnail.asp?file=assets/images/4/40000/4000/600/44649.jpg&maxx=300&maxy=0",
+                    merchant_id:  row[:merchant_id],
+                    created_at:   row[:created_at],
+                    updated_at:   row[:updated_at],
+                    category_id:  rand(1..7))
+      end
+
+      expect(Item.count).to eq(1367)
+      expect(Item.find_by(title: "Glitter scrabble frames").id).to eq(263395617)
+    end
+  end
 end
