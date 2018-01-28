@@ -1,5 +1,35 @@
-<form action="/categories" method="post">
-  <p>Enter a new category:</p>
-  <input type='text' name='category[name]'/><br/>
-  <input type='submit'/>
-</form> 
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Shop With No Name</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/main.css" title="text/css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Create New Category</h1>
+    </header>
+
+    <nav>
+        <a href="/merchants">Merchant Index</a>
+        <a href="/categories">Category Index</a>
+        <a href="/items">Item Index</a>
+    </nav>
+
+    <section class="create-form">
+      <form action="/categories" method="post">
+        <p>Create a new category:</p>
+        <input id='new-name' type='text' name='category[name]' value="Name"/><br/><br/>
+        <input id='new-submit' type='submit'/>
+      </form>
+    </section>
+
+    <footer>
+      <p>Email Us: <a href="mailto:fakeaddress@gmail.com">HR@shopwithnoname.com<a></p>
+    </footer>
+
+  </body>
+</html>
