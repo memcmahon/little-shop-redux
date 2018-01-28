@@ -15,7 +15,7 @@ header {
   width: 100%;
 }
 
-a {
+.nav-links {
   color: rgb(229,229,232);
   text-decoration: none;
 }
@@ -51,13 +51,23 @@ footer {
   font-weight: bold;
   font-size: 20px;
   color: rgb(47,72,88);
+  height: 80px;
+  overflow: hidden;
 }
 
 .display-grid {
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
   grid-template-rows: 20% 20% 20% 20% 20%;
+  overflow: scroll;
   margin: 10px;
+}
+
+.item-image {
+  width: 100px;
+  border-radius: 50%;
+  border: teal 2px solid;
+  margin: 15px;
 }
 
 /*.create-form {
