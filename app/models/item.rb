@@ -7,6 +7,8 @@ class Item < ActiveRecord::Base
             :category_id,
             presence: true
 
+  validates :id, uniqueness: true
+
   belongs_to :merchant
   belongs_to :category
 end
