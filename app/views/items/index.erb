@@ -14,9 +14,9 @@
     </header>
 
     <nav>
-        <a href="/">Home</a>
-        <a href="/merchants">Merchant Index</a>
-        <a href="/categories">Category Index</a>
+        <a class='nav-links' href="/">Home</a>
+        <a class='nav-links' href="/merchants">Merchant Index</a>
+        <a class='nav-links' href="/categories">Category Index</a>
     </nav>
 
     <section class='create-new'>
@@ -26,8 +26,8 @@
     <section class="display-grid">
       <% @items.each do |item| %>
         <div>
-        <h3><a class='body-link' href="/items/<%= item.id %>"><%= item.title %></a></h3>
-          <img src="<%= item.image %>">
+        <div class='body-link'><h3><a href="/items/<%= item.id %>"><%= item.title %></a></h3></div>
+          <img class='item-image' src="<%= item.image %>"><br>
           <a href="/items/<%= item.id  %>/edit">Edit</a>
           <form id='delete' action="/items/<%= item.id %>" method="POST">
             <input type="hidden" name="_method" value="DELETE">
@@ -38,7 +38,7 @@
     </section>
 
     <footer>
-      <p>Email Us: <a href="mailto:fakeaddress@gmail.com">HR@shopwithnoname.com<a></p>
+      <p>Email Us: <a class='nav-links' href="mailto:fakeaddress@gmail.com">HR@shopwithnoname.com<a></p>
     </footer>
 
     <div>
