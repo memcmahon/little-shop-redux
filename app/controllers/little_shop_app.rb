@@ -86,7 +86,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/items/new' do
-    @merchants = Merchant.all
+    @merchants  = Merchant.all
     @categories = Category.all
     erb :"items/new"
   end
@@ -97,15 +97,22 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/items/:id/edit' do
-    @item = Item.find(params[:id])
-    @merchants = Merchant.all
+    @item       = Item.find(params[:id])
+    @merchants  = Merchant.all
     @categories = Category.all
     erb :"items/edit"
   end
 
+  get '/items-dashboard' do
+    @total_count    = Item.count
+    @average_price  = Item.average_price
+    @oldest         = Item.oldest
+    @most_recent    = Item.most_recent
+    erb :"items/dashboard"
+  end
+
   post '/items' do
-    x = Item.create(params[:item])
-    # binding.pry
+    Item.create(params[:item])
     redirect '/items'
   end
 
