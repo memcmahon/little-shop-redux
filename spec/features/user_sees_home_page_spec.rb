@@ -7,7 +7,7 @@ describe "user sees home page" do
 
       expect(current_path).to eq('/')
         within("header") do
-        expect(page).to have_content('Welcome')
+        expect(page).to have_content('Shop With No Name')
       end
     end
   end
