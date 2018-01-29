@@ -73,7 +73,18 @@ footer {
   margin: 15px;
 }
 
-/*.create-form {
+.intro-page {
   display: flex;
+  flex-direction: row;
   justify-content: center;
-}*/
+}
+
+.intro-image {
+  margin: 2%;
+  border: 1px solid rgb(47,72,88);
+}
+
+.about-us {
+  width: 40%;
+  margin: 2%;
+}
