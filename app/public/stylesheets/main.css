@@ -8,8 +8,8 @@ html, body, ul{
 
 header {
   display: flex;
-  justify-content: flex-start;
   justify-content: center;
+  align-items: center;
   background-color: rgb(229, 229, 232);
   color: rgb(47, 72, 88);
   width: 100%;
@@ -64,7 +64,7 @@ footer {
 }
 
 .item-image {
-  width: 100px;
+  width: 75px;
   border-radius: 50%;
   border: teal 2px solid;
   margin: 15px;
