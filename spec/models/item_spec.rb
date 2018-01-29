@@ -108,7 +108,7 @@ RSpec.describe Item do
                            merchant_id: 12334145,
                            category_id: 2)
 
-      expect(Item.average_price).to eq(1500)
+      expect(Item.average_price).to eq(15.00)
     end
 
     it "can return most recently created item" do
