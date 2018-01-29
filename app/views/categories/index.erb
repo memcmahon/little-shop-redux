@@ -1,11 +1,46 @@
-<h1>All Categories</h1>
+<!DOCTYPE html>
 
-<% @categories.each do |category| %>
-<h3><a href="/categories/<%= category.id %>"><%= category.id %></a></h3>
-  <p><%= category.name %></p>
-  <a href="/categories/<%= category.id  %>/edit">Edit</a>
-  <form action="/categories/<%= category.id %>" method="POST">
-    <input type="hidden" name="_method" value="DELETE">
-    <input type="submit" value="delete"/>
-  </form>
-<% end %>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Shop With No Name</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/main.css" title="text/css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Categories</h1>
+    </header>
+
+    <nav>
+        <a class='nav-links' href="/">Home</a>
+        <a class='nav-links' href="/merchants">Merchant Index</a>
+        <a class='nav-links' href="/items">Item Index</a>
+    </nav>
+
+    <section class='create-new'>
+      <a class='body-link' href='/categories/new'>Create New Category</a>
+    </section>
+
+    <section class="display-grid">
+      <% @categories.each do |category| %>
+        <div>
+        <h3><a class='body-link' href="/categories/<%= category.id %>"><%= category.name %></a></h3>
+          <a href="/categories/<%= category.id  %>/edit">Edit</a>
+          <form action="/categories/<%= category.id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="delete"/>
+          </form>
+        </div>
+      <% end %>
+    </section>
+
+    <footer>
+      <p>Email Us: <a class='nav-links' href="mailto:fakeaddress@gmail.com">HR@shopwithnoname.com<a></p>
+    </footer>
+
+    <div>
+    </div>
+  </body>
+</html>

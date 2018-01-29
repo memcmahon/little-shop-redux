@@ -1,6 +1,36 @@
-<form action="/categories/<%= @category.id %>" method="POST">
-  <p>Edit</p>
-  <input type="hidden" name="_method" value="PUT" />
-  <input type='text' name='category[name]' value="<%= @category.name %>"/><br/>
-  <input type='submit'/>
-</form>
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Shop With No Name</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/main.css" title="text/css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Edit Category</h1>
+    </header>
+
+    <nav>
+        <a class='nav-links' href="/merchants">Merchant Index</a>
+        <a class='nav-links' href="/categories">Category Index</a>
+        <a class='nav-links' href="/items">Item Index</a>
+    </nav>
+
+    <section>
+      <form action="/categories/<%= @category.id %>" method="POST">
+        <p>Edit</p>
+        <input type="hidden" name="_method" value="PUT" />
+        <input id='edit-name' type='text' name='category[name]' value="<%= @category.name %>"/><br/>
+        <input id='edit-submit' type='submit'/>
+      </form>
+    </section>
+
+    <footer>
+      <p>Email Us: <a class='nav-links' href="mailto:fakeaddress@gmail.com">HR@shopwithnoname.com<a></p>
+    </footer>
+
+  </body>
+</html>
