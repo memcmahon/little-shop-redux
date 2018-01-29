@@ -13,6 +13,7 @@ class Item < ActiveRecord::Base
   belongs_to :category
 
   def self.average_price
+    # require 'pry'; binding.pry
     (average(:price) / 100).to_f.round(2)
   end
 
