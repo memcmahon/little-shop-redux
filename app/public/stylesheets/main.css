@@ -96,3 +96,9 @@ footer {
   top: 0;
   width: 100%;
 }
+
+.dashboard-metrics {
+  position: fixed;
+  margin-top: 175px;
+  margin-left: 5%;
+}

@@ -93,6 +93,63 @@ RSpec.describe Item do
     end
   end
 
+  describe "has metric functionality" do
+    it "calculates average price of items" do
+      item_1 = Item.create(title: "soggy socks",
+                           description: "yikes my feet are wet!",
+                           price: 1000,
+                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
+                           merchant_id: 12334145,
+                           category_id: 1)
+      item_2 = Item.create(title: "ripped jeans",
+                           description: "They'll make you really cool, bro.",
+                           price: 2000,
+                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
+                           merchant_id: 12334145,
+                           category_id: 2)
+
+      expect(Item.average_price).to eq(15.00)
+    end
+
+    it "can return most recently created item" do
+      item_1 = Item.create(title: "soggy socks",
+                           description: "yikes my feet are wet!",
+                           price: 1000,
+                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
+                           merchant_id: 12334145,
+                           category_id: 1,
+                           created_at: "2016-01-11 09:34:06 UTC")
+      item_2 = Item.create(title: "ripped jeans",
+                           description: "They'll make you really cool, bro.",
+                           price: 2000,
+                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
+                           merchant_id: 12334145,
+                           category_id: 2,
+                           created_at: "2014-01-11 09:34:06 UTC")
+
+      expect(Item.most_recent).to eq(item_1)
+    end
+
+    it "can return oldest item" do
+      item_1 = Item.create(title: "soggy socks",
+                           description: "yikes my feet are wet!",
+                           price: 1000,
+                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
+                           merchant_id: 12334145,
+                           category_id: 1,
+                           created_at: "2014-01-11 09:34:06 UTC")
+      item_2 = Item.create(title: "ripped jeans",
+                           description: "They'll make you really cool, bro.",
+                           price: 2000,
+                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
+                           merchant_id: 12334145,
+                           category_id: 2,
+                           created_at: "2016-01-11 09:34:06 UTC")
+
+      expect(Item.oldest).to eq(item_1)
+    end
+  end
+
   describe "Database Builder" do
     it "loads csv files" do
       items = CSV.open("data/items.csv", headers: true, header_converters: :symbol)
@@ -100,7 +157,7 @@ RSpec.describe Item do
         Item.create(id:           row[:id],
                     title:        row[:name],
                     description:  row[:description],
-                    price:        row[:price].to_i,
+                    price:        row[:unit_price].to_i,
                     image:        "http://www.yourwdwstore.net/thumbnail.asp?file=assets/images/4/40000/4000/600/44649.jpg&maxx=300&maxy=0",
                     merchant_id:  row[:merchant_id],
                     created_at:   row[:created_at],
