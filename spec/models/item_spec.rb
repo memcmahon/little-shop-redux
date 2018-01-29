@@ -96,11 +96,11 @@ RSpec.describe Item do
   describe "has metric functionality" do
     it "calculates average price of items" do
       item_1 = Item.create(title: "soggy socks",
-                         description: "yikes my feet are wet!",
-                         price: 1000,
-                         image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
-                         merchant_id: 12334145,
-                         category_id: 1)
+                           description: "yikes my feet are wet!",
+                           price: 1000,
+                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
+                           merchant_id: 12334145,
+                           category_id: 1)
       item_2 = Item.create(title: "ripped jeans",
                            description: "They'll make you really cool, bro.",
                            price: 2000,
@@ -113,12 +113,12 @@ RSpec.describe Item do
 
     it "can return most recently created item" do
       item_1 = Item.create(title: "soggy socks",
-                         description: "yikes my feet are wet!",
-                         price: 1000,
-                         image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
-                         merchant_id: 12334145,
-                         category_id: 1,
-                         created_at: "2016-01-11 09:34:06 UTC")
+                           description: "yikes my feet are wet!",
+                           price: 1000,
+                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
+                           merchant_id: 12334145,
+                           category_id: 1,
+                           created_at: "2016-01-11 09:34:06 UTC")
       item_2 = Item.create(title: "ripped jeans",
                            description: "They'll make you really cool, bro.",
                            price: 2000,
@@ -132,12 +132,12 @@ RSpec.describe Item do
 
     it "can return oldest item" do
       item_1 = Item.create(title: "soggy socks",
-                         description: "yikes my feet are wet!",
-                         price: 1000,
-                         image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
-                         merchant_id: 12334145,
-                         category_id: 1,
-                         created_at: "2014-01-11 09:34:06 UTC")
+                           description: "yikes my feet are wet!",
+                           price: 1000,
+                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
+                           merchant_id: 12334145,
+                           category_id: 1,
+                           created_at: "2014-01-11 09:34:06 UTC")
       item_2 = Item.create(title: "ripped jeans",
                            description: "They'll make you really cool, bro.",
                            price: 2000,
