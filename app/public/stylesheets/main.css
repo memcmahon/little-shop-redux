@@ -51,7 +51,10 @@ footer {
   font-weight: bold;
   font-size: 20px;
   color: rgb(47,72,88);
-  height: 80px;
+}
+
+.cell-title {
+  height: 75px;
   overflow: hidden;
 }
 
