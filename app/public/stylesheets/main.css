@@ -42,6 +42,7 @@ footer {
 }
 
 .create-new {
+  margin-top: 175px;
   display: flex;
   justify-content: center;
   padding: 10px;
@@ -64,6 +65,7 @@ footer {
   grid-template-rows: 20% 20% 20% 20% 20%;
   overflow: scroll;
   margin: 10px;
+  margin-bottom: 100px;
 }
 
 .item-image {
@@ -87,4 +89,10 @@ footer {
 .about-us {
   width: 40%;
   margin: 2%;
+}
+
+.banner {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
