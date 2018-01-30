@@ -27,6 +27,110 @@ RSpec.describe Merchant do
     end
   end
 
+  describe "Has metric functionality" do
+    it "returns merchant with most items" do
+      merchant_1 = Merchant.create(id: 123, name: "Sally")
+      merchant_2 = Merchant.create(id: 456, name: "Billy")
+      item_1 = Item.create(title: "soggy socks",
+                           description: "yikes my feet are wet!",
+                           price: 1023,
+                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
+                           merchant_id: 123,
+                           category_id: 1)
+      item_2 = Item.create(title: "ripped jeans",
+                           description: "They'll make you really cool, bro.",
+                           price: 2099,
+                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
+                           merchant_id: 456,
+                           category_id: 2)
+      item_3 = Item.create(title: "oxford polo",
+                           description: "makes you look smart!",
+                           price: 1249,
+                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
+                           merchant_id: 123,
+                           category_id: 1)
+
+      expect(Merchant.has_most_items.name).to eq("Sally")
+    end
+
+    xit "returns merchant with the highest priced item" do
+      merchant_1 = Merchant.create(id: 123, name: "Sally")
+      merchant_2 = Merchant.create(id: 456, name: "Billy")
+      item_1 = Item.create(title: "soggy socks",
+                           description: "yikes my feet are wet!",
+                           price: 1023,
+                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
+                           merchant_id: 123,
+                           category_id: 1)
+      item_2 = Item.create(title: "ripped jeans",
+                           description: "They'll make you really cool, bro.",
+                           price: 2099,
+                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
+                           merchant_id: 456,
+                           category_id: 2)
+      item_3 = Item.create(title: "oxford polo",
+                           description: "makes you look smart!",
+                           price: 1249,
+                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
+                           merchant_id: 123,
+                           category_id: 1)
+
+      expect(Merchant.includes_most_expensive_item.name).to eq('Billy')
+    end
+
+    xit "calculates the total number of items per merchant" do
+      sally = Merchant.create(id: 123, name: "Sally")
+      billy = Merchant.create(id: 456, name: "Billy")
+      item_1 = Item.create(title: "soggy socks",
+                           description: "yikes my feet are wet!",
+                           price: 1023,
+                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
+                           merchant_id: 123,
+                           category_id: 1)
+      item_2 = Item.create(title: "ripped jeans",
+                           description: "They'll make you really cool, bro.",
+                           price: 2099,
+                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
+                           merchant_id: 456,
+                           category_id: 2)
+      item_3 = Item.create(title: "oxford polo",
+                           description: "makes you look smart!",
+                           price: 1249,
+                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
+                           merchant_id: 123,
+                           category_id: 1)
+
+      expect(sally.total_items).to eq(2)
+      expect(billy.total_items).to eq(1)
+    end
+
+    xit "calculates total price of all merchant items" do
+      sally = Merchant.create(id: 123, name: "Sally")
+      billy = Merchant.create(id: 456, name: "Billy")
+      item_1 = Item.create(title: "soggy socks",
+                           description: "yikes my feet are wet!",
+                           price: 1023,
+                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
+                           merchant_id: 123,
+                           category_id: 1)
+      item_2 = Item.create(title: "ripped jeans",
+                           description: "They'll make you really cool, bro.",
+                           price: 2099,
+                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
+                           merchant_id: 456,
+                           category_id: 2)
+      item_3 = Item.create(title: "oxford polo",
+                           description: "makes you look smart!",
+                           price: 1249,
+                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
+                           merchant_id: 123,
+                           category_id: 1)
+
+      expect(sally.total_items_price).to eq(22.72)
+      expect(billy.total_items_price).to eq(20.99)
+    end
+  end
+
   describe "Database Builder" do
     it "loads csv files" do
       merchants = CSV.open("data/merchants.csv", headers: true, header_converters: :symbol)
