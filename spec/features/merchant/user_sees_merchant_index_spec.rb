@@ -34,7 +34,7 @@ describe "user sees merchant index" do
       merchant_1 = Merchant.create(id: 123, name: "Sally")
 
       visit '/merchants'
-      click_link('Edit') # how does it know which edit?
+      click_link('Edit') 
 
       expect(current_path).to eq("/merchants/#{merchant_1.id}/edit")
     end

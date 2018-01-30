@@ -184,7 +184,7 @@ RSpec.describe Merchant do
 
   describe "Database Builder" do
     it "loads csv files" do
-      merchants = CSV.open("data/merchants.csv", headers: true, header_converters: :symbol)
+      merchants = CSV.open("spec/fixtures/merchants_fixture.csv", headers: true, header_converters: :symbol)
       merchants.each do |row|
         Merchant.create(id:         row[:id],
                         name:       row[:name],
@@ -192,8 +192,8 @@ RSpec.describe Merchant do
                         updated_at: row[:updated_at])
       end
 
-      expect(Merchant.count).to eq 475
-      expect(Merchant.find_by(name: "Princessfrankknits").id).to eq 12334234
+      expect(Merchant.count).to eq(14)
+      expect(Merchant.find_by(name: "GoldenRayPress").id).to eq(12334135)
     end
   end
 end

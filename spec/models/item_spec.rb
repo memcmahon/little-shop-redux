@@ -76,7 +76,7 @@ RSpec.describe Item do
       merchant = Merchant.create(id: 12334145, name: "BowlsByChris")
 
       expect(item.merchant).to be_an_instance_of Merchant
-      expect(item.merchant.name).to eq "BowlsByChris"
+      expect(item.merchant.name).to eq("BowlsByChris")
     end
 
     it "is linked to a category object" do
@@ -89,7 +89,7 @@ RSpec.describe Item do
       category = Category.create(name: "Sleepy")
 
       expect(item.category).to be_an_instance_of Category
-      expect(item.category.name).to eq "Sleepy"
+      expect(item.category.name).to eq("Sleepy")
     end
   end
 
@@ -152,7 +152,7 @@ RSpec.describe Item do
 
   describe "Database Builder" do
     it "loads csv files" do
-      items = CSV.open("data/items.csv", headers: true, header_converters: :symbol)
+      items = CSV.open("spec/fixtures/items_fixture.csv", headers: true, header_converters: :symbol)
       items.each do |row|
         Item.create(id:           row[:id],
                     title:        row[:name],
@@ -165,8 +165,8 @@ RSpec.describe Item do
                     category_id:  rand(1..7))
       end
 
-      expect(Item.count).to eq(1367)
-      expect(Item.find_by(title: "Glitter scrabble frames").id).to eq(263395617)
+      expect(Item.count).to eq(16)
+      expect(Item.find_by(title: "Course contre la montre").id).to eq(263396517)
     end
   end
 end

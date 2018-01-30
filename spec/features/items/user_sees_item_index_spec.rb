@@ -59,7 +59,7 @@ describe "user sees item index" do
                            category_id: 1)
 
       visit '/items'
-      click_link('Edit') # how does it know which edit?
+      click_link('Edit')
 
       expect(current_path).to eq("/items/#{item_1.id}/edit")
     end

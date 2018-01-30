@@ -14,7 +14,7 @@ describe "user can create new merchant" do
       expect(current_path).to eq('/merchants')
       expect(page).to have_content('Margie')
       expect(Merchant.all.count).to eq(3)
-      # expect(new_merchant.id).to eq(1) NEW MERCHANTS AUTO PRIMARY KEY ID!
+      expect(new_merchant.id).to eq(1)
     end
   end
 end

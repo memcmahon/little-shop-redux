@@ -109,7 +109,6 @@ describe "user can edit existing item" do
       edited_item = Item.find(1)
 
       expect(current_path).to eq('/items/1')
-      # expect(page).to have_content('Dopey')
       expect(edited_item.category.name).to eq("Dopey")
     end
   end
