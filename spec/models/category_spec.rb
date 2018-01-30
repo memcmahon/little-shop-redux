@@ -24,8 +24,8 @@ RSpec.describe Category do
 
   describe "Has metric functionality" do
     it "calculates average price of item by category" do
-      expensive = Category.create(name: 'expensive')
-      cheap = Category.create(name: 'cheap')
+      cheap = Category.create(name: 'expensive')
+      expensive = Category.create(name: 'cheap')
       item_1 = Item.create(title: "soggy socks",
                            description: "yikes my feet are wet!",
                            price: 1023,
@@ -44,15 +44,11 @@ RSpec.describe Category do
                            image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
                            merchant_id: 12334146,
                            category_id: 1)
-      item_4 = Item.create(title: "leather arm cuff",
-                          description: "They'll make you reallllllllllllly cool, bro.",
-                          price: 3328,
-                          image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
-                          merchant_id: 12334147,
-                          category_id: 2)
 
-      expect(Category.average_price(1)).to eq(11.36)
-      expect(Category.average_price(2)).to eq(27.14)
+      expect(cheap.average_price).to eq(11.36)
+      expect(expensive.average_price).to eq(20.99)
     end
+
+    
   end
 end
