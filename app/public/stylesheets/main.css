@@ -4,6 +4,7 @@ html, body, ul{
   border: 0;
   font-family: 'PT Sans Narrow', sans-serif;
   background-color: rgb(134,187,216);
+  list-style-type: none;
 }
 
 header {
@@ -66,6 +67,13 @@ footer {
   overflow: scroll;
   margin: 10px;
   margin-bottom: 100px;
+  border: solid 0.4px teal;
+}
+
+.grid-cell {
+  border: solid 0.2px teal;
+  padding: 8px;
+  list-style-type: none;
 }
 
 .item-image {
@@ -103,7 +111,6 @@ footer {
 }
 
 .dashboard-metrics {
-  position: fixed;
   margin-top: 175px;
   margin-left: 5%;
 }
