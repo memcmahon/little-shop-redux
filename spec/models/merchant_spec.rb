@@ -183,7 +183,7 @@ RSpec.describe Merchant do
   end
 
   describe "Database Builder" do
-    it "loads csv files" do
+    xit "loads csv files" do
       merchants = CSV.open("data/merchants.csv", headers: true, header_converters: :symbol)
       merchants.each do |row|
         Merchant.create(id:         row[:id],

@@ -21,10 +21,10 @@
     </div>
 
     <section class='dashboard-metrics'>
-      <p>Total Count of Items: <%= @total_count %></p>
-      <p>Average Price of Items: $<%= @average_price %></p>
-      <p>Most Recently Created Item: <%= @most_recent %></p>
-      <p>Oldest Item: <%= @oldest %></p>
+      <p>Total Count of Items: <%= @items.count %></p>
+      <p>Average Price of Items: $<%= @items.average_price %></p>
+      <p>Most Recently Created Item: <%= @items.most_recent.title %></p>
+      <p>Oldest Item: <%= @items.oldest.title %></p>
     </section>
 
     <footer>
