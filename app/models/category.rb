@@ -9,7 +9,16 @@ class Category < ActiveRecord::Base
     items.average_price
   end
 
-  def self.with_item_attributes
+  def self.sort_by_item_price
     select("categories.*, items.*").joins(:items)
+      .order('price')
+  end
+
+  def self.includes_most_expensive_item
+    sort_by_item_price.last.name
+  end
+
+  def self.includes_least_expensive_item
+    sort_by_item_price.first.name
   end
 end
