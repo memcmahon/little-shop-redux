@@ -63,6 +63,13 @@ class LittleShopApp < Sinatra::Base
     erb :"categories/edit"
   end
 
+  get '/categories-dashboard' do
+    @categories = Category.all
+    @includes_most_expensive_item = Category.includes_most_expensive_item
+    @includes_least_expensive_item = Category.includes_least_expensive_item
+    erb :"categories/dashboard"
+  end
+
   post '/categories' do
     Category.create(params[:category])
     redirect '/categories'
