@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Shop With No Name</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/main.css" title="text/css" />
+  </head>
+
+  <body>
+    <div class='banner'>
+      <header>
+        <h1>Merchant Dashboard</h1>
+      </header>
+      <nav>
+          <a class='nav-links' href="/">Home</a>
+          <a class='nav-links' href="/merchants">Merchant Index</a>
+          <a class='nav-links' href="/categories">Category Index</a>
+      </nav>
+    </div>
+
+    <section class='dashboard-metrics'>
+      <p>Merchant with most items: <%= @merchants.has_most_items.name %></p>
+      <p>Merchant with highest priced item: <%= @merchants.includes_most_expensive_item.name %></p>
+    </section>
+
+    <h3>Individual Merchant Analytics</h3>
+    <div class="display-grid">
+        <% @merchants.each do |merchant| %>
+          <div class="grid-cell">
+            <p><%= merchant.name %></p>
+            <ul>
+              <li>Number of items: <%= merchant.total_items %></li>
+              <li>Price of all items: $<%= merchant.total_items_price %></li>
+            </ul>
+          </div>
+        <% end %>
+    </div>
+
+    <footer>
+      <p>Email Us: <a class='nav-links' href="mailto:fakeaddress@gmail.com">HR@shopwithnoname.com<a></p>
+    </footer>
+  </body>
+</html>
