@@ -78,7 +78,33 @@ RSpec.describe Merchant do
       expect(Merchant.has_most_items.name).to eq("Sally")
     end
 
-    xit "returns merchant with the highest priced item" do
+    it "can sort merchants by item price" do
+      sally = Merchant.create(id: 123, name: "Sally")
+      billy = Merchant.create(id: 456, name: "Billy")
+      item_1 = Item.create(title: "soggy socks",
+                           description: "yikes my feet are wet!",
+                           price: 1023,
+                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
+                           merchant_id: 123,
+                           category_id: 1)
+      item_2 = Item.create(title: "ripped jeans",
+                           description: "They'll make you really cool, bro.",
+                           price: 2099,
+                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
+                           merchant_id: 456,
+                           category_id: 2)
+      item_3 = Item.create(title: "oxford polo",
+                           description: "makes you look smart!",
+                           price: 1249,
+                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
+                           merchant_id: 123,
+                           category_id: 1)
+
+      expect(Merchant.sort_by_item_price.last.name).to eq("Billy")
+      expect(Merchant.sort_by_item_price.first.name).to eq("Sally")
+    end
+
+    it "returns merchant with the highest priced item" do
       merchant_1 = Merchant.create(id: 123, name: "Sally")
       merchant_2 = Merchant.create(id: 456, name: "Billy")
       item_1 = Item.create(title: "soggy socks",
@@ -103,7 +129,7 @@ RSpec.describe Merchant do
       expect(Merchant.includes_most_expensive_item.name).to eq('Billy')
     end
 
-    xit "calculates the total number of items per merchant" do
+    it "calculates the total number of items per merchant" do
       sally = Merchant.create(id: 123, name: "Sally")
       billy = Merchant.create(id: 456, name: "Billy")
       item_1 = Item.create(title: "soggy socks",
@@ -129,7 +155,7 @@ RSpec.describe Merchant do
       expect(billy.total_items).to eq(1)
     end
 
-    xit "calculates total price of all merchant items" do
+    it "calculates total price of all merchant items" do
       sally = Merchant.create(id: 123, name: "Sally")
       billy = Merchant.create(id: 456, name: "Billy")
       item_1 = Item.create(title: "soggy socks",
