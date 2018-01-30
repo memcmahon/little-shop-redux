@@ -79,6 +79,10 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  background-image: url("https://images.unsplash.com/photo-1506765336936-bb05e7e06295?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=edbb96ae977af71118e4c12e97c75477&auto=format&fit=crop&w=1350&q=80");
+  background-size: cover;
+  background-position: bottom;
+  height: 700px;
 }
 
 .intro-image {
@@ -89,6 +93,7 @@ footer {
 .about-us {
   width: 40%;
   margin: 2%;
+  color: rgb(229, 229, 232);
 }
 
 .banner {
