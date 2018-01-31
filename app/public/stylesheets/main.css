@@ -1,10 +1,17 @@
-html, body, ul{
+html, body {
   margin: 0;
   padding: 0;
   border: 0;
   font-family: 'PT Sans Narrow', sans-serif;
   background-color: rgb(134,187,216);
+}
+
+ul {
   list-style-type: none;
+}
+
+p {
+  margin: 0px;
 }
 
 header {
@@ -25,7 +32,7 @@ header {
 .dropbtn {
     background-color: rgb(47, 72, 88);
     color: rgb(229,229,232);
-    padding: 16px;
+    padding: 0px;
     font-size: 14px;
     border: none;
     font-family: 'PT Sans Narrow', sans-serif;
@@ -167,7 +174,7 @@ footer {
 }
 
 .dashboard-metrics {
-  margin-top: 175px;
+  padding-top: 150px;
   margin-left: 5%;
 }
 

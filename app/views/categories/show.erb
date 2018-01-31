@@ -40,8 +40,8 @@
       </div>
     </nav>
 
-    <section>
-      <h1><%= @category.name %></h1>
+    <section class="category-index">
+      <p><%= @category.name %><p>
       <p><%= @category.id %></p>
       <a href="/categories/<%= @category.id  %>/edit">Edit</a>
       <form action="/categories/<%= @category.id %>" method="POST">
