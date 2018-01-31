@@ -191,6 +191,16 @@ form {
   background-color: rgb(229,229,232);
 }
 
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 25%;
+  height: 300px;
+  margin-left: 37.25%;
+  margin-top: 50px;
+}
+
 .show-display {
   width: 20%;
   height: 250px;
