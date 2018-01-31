@@ -45,8 +45,8 @@
       <p><%= @item.description %></p>
       <p><%= @item.price %></p>
       <p><a href="<%= @item.image %>"></p>
-      <p><%= @item.merchant_id %></p>
-      <p><%= @item.category_id %></p>
+      <p><%= @item.merchant.name %></p>
+      <p><%= @item.category.name %></p>
 
       <a href="/items/<%= @item.id  %>/edit">Edit</a>
       <form action="/items/<%= @item.id %>" method="POST">

@@ -28,31 +28,6 @@ RSpec.describe Merchant do
   end
 
   describe "Has metric functionality" do
-    xit "can calculate item_count_per_merchant_id" do
-      merchant_1 = Merchant.create(id: 123, name: "Sally")
-      merchant_2 = Merchant.create(id: 456, name: "Billy")
-      item_1 = Item.create(title: "soggy socks",
-                           description: "yikes my feet are wet!",
-                           price: 1023,
-                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
-                           merchant_id: 123,
-                           category_id: 1)
-      item_2 = Item.create(title: "ripped jeans",
-                           description: "They'll make you really cool, bro.",
-                           price: 2099,
-                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
-                           merchant_id: 456,
-                           category_id: 2)
-      item_3 = Item.create(title: "oxford polo",
-                           description: "makes you look smart!",
-                           price: 1249,
-                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
-                           merchant_id: 123,
-                           category_id: 1)
-
-      expect(Merchant.item_count_per_merchant_id).to eq({123 => 2, 456 => 1})
-    end
-
     it "returns merchant with most items" do
       merchant_1 = Merchant.create(id: 123, name: "Sally")
       merchant_2 = Merchant.create(id: 456, name: "Billy")

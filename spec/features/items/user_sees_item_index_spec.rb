@@ -29,6 +29,8 @@ describe "user sees item index" do
 
   context "click individual item title" do
     it "brings user to individual item show page" do
+      merchant = Merchant.create(id: 12334145, name: "Billy")
+      category = Category.create(id: 1, name: "category")
       item_1 = Item.create(title: "socks",
                            description: "100% merino wool",
                            price: 2299,

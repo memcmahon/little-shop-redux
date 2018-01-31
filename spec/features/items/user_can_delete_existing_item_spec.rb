@@ -29,6 +29,8 @@ describe "user can delete existing item from index" do
 
   context "visits individual item page" do
     it "deletes the individual item" do
+      merchant = Merchant.create(id: 12334145, name: "Billy")
+      category = Category.create(id: 1, name: "category")
       item_1 = Item.create(title: "socks",
                            description: "100% merino wool",
                            price: 2299,
