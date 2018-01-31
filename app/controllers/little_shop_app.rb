@@ -18,12 +18,12 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/merchants/:id' do
-    @merchant = Merchant.find_by(id: params[:id])
+    @merchant = Merchant.find(params[:id])
     erb :"merchants/show"
   end
 
   get '/merchants/:id/edit' do
-    @merchant = Merchant.find_by(id: params[:id])
+    @merchant = Merchant.find(params[:id])
     erb :"merchants/edit"
   end
 
@@ -38,13 +38,13 @@ class LittleShopApp < Sinatra::Base
   end
 
   put '/merchants/:id' do
-    merchant = Merchant.find_by(id: params[:id])
-    merchant.update(name: params[:merchant][:name])
+    merchant = Merchant.find(params[:id])
+    merchant.update(params[:merchant])
     redirect "/merchants/#{merchant.id}"
   end
 
   delete '/merchants/:id' do
-    merchant = Merchant.find_by(id: params[:id])
+    merchant = Merchant.find(params[:id])
     merchant.destroy
     redirect '/merchants'
   end
@@ -59,19 +59,17 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/categories/:id' do
-    @category = Category.find_by(id: params[:id])
+    @category = Category.find(params[:id])
     erb :"categories/show"
   end
 
   get '/categories/:id/edit' do
-    @category = Category.find_by(id: params[:id])
+    @category = Category.find(params[:id])
     erb :"categories/edit"
   end
 
   get '/categories-dashboard' do
     @categories = Category.all
-    @includes_most_expensive_item = Category.includes_most_expensive_item
-    @includes_least_expensive_item = Category.includes_least_expensive_item
     erb :"categories/dashboard"
   end
 
@@ -81,13 +79,13 @@ class LittleShopApp < Sinatra::Base
   end
 
   put '/categories/:id' do
-    category = Category.find_by(id: params[:id])
-    category.update(name: params[:category].values.first)
+    category = Category.find(params[:id])
+    category.update(params[:category])
     redirect "/categories/#{category.id}"
   end
 
   delete '/categories/:id' do
-    category = Category.find_by(id: params[:id])
+    category = Category.find(params[:id])
     category.destroy
     redirect '/categories'
   end
@@ -116,10 +114,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/items-dashboard' do
-    @total_count    = Item.count
-    @average_price  = Item.average_price
-    @oldest         = Item.oldest.title
-    @most_recent    = Item.most_recent.title
+    @items = Item.all
     erb :"items/dashboard"
   end
 

@@ -19,23 +19,23 @@
         <a href="/items">Item Index</a>
     </nav>
 
-    <section class="create-form">
+    <section class="create-form form-page">
       <form action="/items" method="POST">
         <p>Create a new item:</p>
-        <input id='new-title' type='text' name='item[title]' value="Title"/><br/><br/>
-        <textarea id='new-descr' name='item[description]' value="Description Here"></textarea><br/>
-        <input id='new-price' type='number' name='item[price]' value="Price"/><br/><br/>
-        <input id='new-image' type='text' name='item[image]' value="Image URL"/><br/><br/>
-        <select id='new-merchant' name='item[merchant_id]'>
+        <input id='new-title' type='text' name='item[title]' value="Title"/><br>
+        <textarea id='new-descr' name='item[description]' value="Description Here"></textarea><br>
+        <input id='new-price' type='number' name='item[price]' value="Price"/><br>
+        <input id='new-image' type='text' name='item[image]' value="Image URL"/><br>
+        <select id='new-merchant' name='item[merchant_id]'><br>
           <% @merchants.each do |merchant| %>
             <option value="<%= merchant.id %>"><%= merchant.name %></option>
           <% end %>
-        </select><br/><br/>
+        </select><br/>
         <select id='new-category' name='item[category_id]'>
           <% @categories.each do |category| %>
             <option value="<%= category.id %>"><%= category.name %></option>
           <% end %>
-        </select><br/><br/>
+        </select><br/>
         <input id='new-submit' type='submit'/>
       </form>
     </section>

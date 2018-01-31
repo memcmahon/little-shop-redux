@@ -1,20 +1,53 @@
+<!DOCTYPE html>
 
-<form action="/items/<%= @item.id %>" method="POST">
-  <p>Edit</p>
-  <input type="hidden" name="_method" value="PUT" />
-  <input id='edit-title' type='text' name='item[title]' value="<%= @item.title %>"/><br/><br/>
-  <textarea id='edit-descr' name='item[description]'><%= @item.description %></textarea><br/>
-  <input id='edit-price' type='number' name='item[price]' value="<%= @item.price %>"/><br/><br/>
-  <input id='edit-image' type='text' name='item[image]' value="<%= @item.image %>"/><br/><br/>
-  <select id='edit-merchant' name='item[merchant_id]'>
-    <% @merchants.each do |merchant| %>
-      <option value="<%= merchant.id %>"><%= merchant.name %></option>
-    <% end %>
-  </select><br/><br/>
-  <select id='edit-category' name='item[category_id]'>
-    <% @categories.each do |category| %>
-      <option value="<%= category.id %>"><%= category.name %></option>
-    <% end %>
-  </select><br/><br/>
-  <input id='edit-submit' type='submit'/>
-</form>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Shop With No Name</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/main.css" title="text/css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Edit Item</h1>
+    </header>
+
+    <nav>
+        <a class='nav-links' href="/merchants">Merchant Index</a>
+        <a class='nav-links' href="/categories">Category Index</a>
+        <a class='nav-links' href="/items">Item Index</a>
+    </nav>
+
+    <section class='form-page'>
+      <form action="/items/<%= @item.id %>" method="POST">
+        <p>Edit</p>
+        <input type="hidden" name="_method" value="PUT" />
+        <input id='edit-title' type='text' name='item[title]' value="<%= @item.title %>"/><br>
+        <textarea id='edit-descr' name='item[description]'><%= @item.description %></textarea><br>
+        <input id='edit-price' type='number' name='item[price]' value="<%= @item.price %>"/><br>
+        <input id='edit-image' type='text' name='item[image]' value="<%= @item.image %>"/><br>
+        <select id='edit-merchant' name='item[merchant_id]'><br>
+          <% @merchants.each do |merchant| %>
+            <option value="<%= merchant.id %>"><%= merchant.name %></option>
+          <% end %>
+        </select><br/>
+        <select id='edit-category' name='item[category_id]'>
+          <% @categories.each do |category| %>
+            <option value="<%= category.id %>"><%= category.name %></option>
+          <% end %>
+        </select><br/>
+        <input id='edit-submit' type='submit'/>
+      </form>
+      <div class="quote">
+        <p class="quote">It is not necessary to change.</p>
+        <p class="quote">Survival is not necessary.</p>
+        <p class="quote">- W. Edwards Deming -</p>
+      </div>
+    </section>
+
+    <footer>
+      <p>Email Us: <a class='nav-links' href="mailto:fakeaddress@gmail.com">HR@shopwithnoname.com<a></p>
+    </footer>
+  </body>
+</html>
