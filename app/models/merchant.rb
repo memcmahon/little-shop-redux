@@ -5,19 +5,27 @@ class Merchant < ActiveRecord::Base
 
   has_many :items
 
-  def self.item_count_per_merchant_id
-    select("merchants.*, items.*")
+  def self.has_most_items
+    select("merchants.*, count(items) AS item_count")
       .joins(:items)
-      .group(:merchant_id)
-      .count(:items)
+      .group(:id)
+      .order("item_count")
+      .last
   end
 
-  def self.has_most_items
-    merchant_id = item_count_per_merchant_id.max_by do |merchant_id, item_count|
-      item_count
-    end[0]
-    find(merchant_id)
-  end
+  # def self.item_count_per_merchant_id
+  #   select("merchants.*, items.*")
+  #     .joins(:items)
+  #     .group(:merchant_id)
+  #     .count(:items)
+  # end
+  #
+  # def self.has_most_items
+  #   merchant_id = item_count_per_merchant_id.max_by do |merchant_id, item_count|
+  #     item_count
+  #   end[0]
+  #   find(merchant_id)
+  # end
 
   def self.sort_by_item_price
     select("merchants.*, items.*")
