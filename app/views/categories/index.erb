@@ -49,7 +49,7 @@
       <% @categories.each do |category| %>
         <div class='grid-cell'>
         <h3><a class='body-link' href="/categories/<%= category.id %>"><%= category.name %></a></h3>
-          <a href="/categories/<%= category.id  %>/edit">Edit</a>
+          <a class='nav-links' href="/categories/<%= category.id  %>/edit">Edit</a>
           <form action="/categories/<%= category.id %>" method="POST">
             <input type="hidden" name="_method" value="DELETE">
             <input type="submit" value="delete"/>
