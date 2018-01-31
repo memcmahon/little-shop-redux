@@ -3,6 +3,8 @@ require 'pry'
 describe "user can edit existing item" do
   context "visits item edit page" do
     it "edits the title of the item" do
+      merchant = Merchant.create(id: 12334145, name: "Billy")
+      category = Category.create(id: 1, name: "category")
       item_1 = Item.create(title: "socks",
                            description: "100% merino wool",
                            price: 2299,
@@ -21,6 +23,8 @@ describe "user can edit existing item" do
     end
 
     it "edits the description of the item" do
+      merchant = Merchant.create(id: 12334145, name: "Billy")
+      category = Category.create(id: 1, name: "category")
       item_1 = Item.create(title: "socks",
                            description: "100% merino wool",
                            price: 2299,
@@ -39,6 +43,8 @@ describe "user can edit existing item" do
     end
 
     it "edits the price of the item" do
+      merchant = Merchant.create(id: 12334145, name: "Billy")
+      category = Category.create(id: 1, name: "category")
       item_1 = Item.create(title: "socks",
                            description: "100% merino wool",
                            price: 2299,
@@ -57,6 +63,8 @@ describe "user can edit existing item" do
     end
 
     it "edits the image of the item" do
+      merchant = Merchant.create(id: 12334145, name: "Billy")
+      category = Category.create(id: 1, name: "category")
       item_1 = Item.create(title: "socks",
                            description: "100% merino wool",
                            price: 2299,
@@ -73,7 +81,9 @@ describe "user can edit existing item" do
       expect(edited_item.image).to eq("https://new-image.com")
     end
 
-    xit "edits the merchant associated with the item" do
+    it "edits the merchant associated with the item" do
+      merchant = Merchant.create(id: 12334145, name: "Billy")
+      category = Category.create(id: 1, name: "category")
       item_1 = Item.create(title: "socks",
                            description: "100% merino wool",
                            price: 2299,
@@ -81,19 +91,20 @@ describe "user can edit existing item" do
                            merchant_id: 12334145,
                            category_id: 1)
       old_merchant = Merchant.create(id: 12334145, name: "Bob")
-      new_merchant = Merchant.create(id:456, name: "Jasmine")
+      new_merchant = Merchant.create(id: 456, name: "Sally")
 
       visit '/items/1/edit'
-      select('Jasmine', :from => 'edit-merchant')
+      select('Sally', :from => 'edit-merchant')
       click_button('edit-submit')
       edited_item = Item.find(1)
 
       expect(current_path).to eq('/items/1')
-      expect(page).to have_content('Jasmine')
-      expect(edited_item.merchant.name).to eq("Jasmine")
+      expect(page).to have_content('Sally')
+      expect(edited_item.merchant.name).to eq("Sally")
     end
 
     it "edits the category associated with the item" do
+      merchant = Merchant.create(id: 12334145, name: "Billy")
       item_1 = Item.create(title: "socks",
                            description: "100% merino wool",
                            price: 2299,
