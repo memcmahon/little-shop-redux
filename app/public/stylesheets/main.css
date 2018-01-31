@@ -191,6 +191,16 @@ form {
   background-color: rgb(229,229,232);
 }
 
+.new-item-form {
+  width: 25%;
+  height: 55%;
+  margin-left: 37.25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(229,229,232, 0.9);
+}
+
 .edit-form {
   display: flex;
   flex-direction: column;
