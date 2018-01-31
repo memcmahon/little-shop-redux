@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html class="merchants">
   <head>
     <meta charset="utf-8" />
     <title>Shop With No Name</title>
@@ -10,10 +10,11 @@
 
   <body>
     <header>
-      <h1>Create New Merchant</h1>
+      <h1>Merchant Info</h1>
     </header>
 
     <nav>
+      <a class='dropbtn' href="/">Home</a>
       <div class="dropdown">
         <button class="dropbtn">Merchants</button>
           <div class="dropdown-content">
@@ -40,10 +41,11 @@
       </div>
     </nav>
 
-    <section class="create-form">
+
+    <section class="info">
       <h1><%= @merchant.name %></h1>
-      <p><%= @merchant.id %></p>
-      <a href="/merchants/<%= @merchant.id  %>/edit">Edit</a>
+      <p>Merchant ID: <%= @merchant.id %></p>
+      <a class='info-link' href="/merchants/<%= @merchant.id  %>/edit">Edit</a>
       <form action="/merchants/<%= @merchant.id %>" method="POST">
         <input type="hidden" name="_method" value="DELETE">
         <input type="submit" value="delete"/>
@@ -51,7 +53,7 @@
     </section>
 
     <footer>
-      <p>Email Us: <a href="mailto:fakeaddress@gmail.com">HR@shopwithnoname.com<a></p>
+      <p>Email Us: <a class='nav-links' href="mailto:fakeaddress@gmail.com">HR@shopwithnoname.com<a></p>
     </footer>
 
   </body>

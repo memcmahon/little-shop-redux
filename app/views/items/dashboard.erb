@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html class="items">
   <head>
     <meta charset="utf-8" />
     <title>Shop With No Name</title>
@@ -14,6 +14,7 @@
         <h1>Item Dashboard</h1>
       </header>
       <nav>
+        <a class='dropbtn' href="/">Home</a>
         <div class="dropdown">
           <button class="dropbtn">Merchants</button>
             <div class="dropdown-content">
@@ -41,12 +42,12 @@
       </nav>
     </div>
 
-    <div class='main-section items analytics'>
-      <section class='dashboard-metrics'>
-        <p>Total Count of Items: <%= @items.count %></p>
-        <p>Average Price of Items: $<%= @items.average_price %></p>
-        <p>Most Recently Created Item: <%= @items.most_recent.title %></p>
-        <p>Oldest Item: <%= @items.oldest.title %></p>
+    <div>
+      <section class='item-info'>
+        <h4>Total Count of Items: <%= @items.count %></h4>
+        <h4>Average Price of Items: $<%= @items.average_price %></h4>
+        <h4>Most Recently Created Item: <%= @items.most_recent.title %></h4>
+        <h4>Oldest Item: <%= @items.oldest.title %></h4>
       </section>
     </div>
 

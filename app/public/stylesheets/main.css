@@ -3,15 +3,24 @@ html, body {
   padding: 0;
   border: 0;
   font-family: 'PT Sans Narrow', sans-serif;
-  background-color: rgb(134,187,216);
+  /* background-color: rgb(134,187,216); */
 }
 
 ul {
   list-style-type: none;
 }
 
-p {
+h2 {
+  margin: 10px;
+  color: (229, 229, 232);
+  background-color: rgba(229, 229, 232, 0.65);
+  text-align: center;
+}
+
+h4 {
+  background-color: rgba(229, 229, 232, 0.65);
   margin: 0px;
+  color: black;
 }
 
 header {
@@ -174,8 +183,10 @@ footer {
 }
 
 .dashboard-metrics {
-  padding-top: 150px;
-  margin-left: 5%;
+  padding-top: 120px;
+  margin: 10px;
+  color: rgb(229, 229, 232);
+  font-size: 20px;
 }
 
 form {
@@ -211,7 +222,10 @@ form {
 
 .merchants {
   background-image: url("https://images.unsplash.com/photo-1465126188505-4f04a0f23a4d?ixlib=rb-0.3.5&s=31f34e16776b5471afd03cc3bbc2ffb7&auto=format&fit=crop&w=1675&q=80");
+  height: 100%;
+  size: 100% 100%;
 }
+
 
 .categories {
   background-image: url("https://images.unsplash.com/photo-1468408816249-a6778cf9ace2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a360b86d7d081e927c2d934865ee933c&auto=format&fit=crop&w=1950&q=80");
@@ -238,4 +252,23 @@ form {
 
 p.quote {
   margin: 0px;
+}
+
+.info {
+  margin: 10px;
+  background-color: rgba(229, 229, 232, 0.65);
+  text-align: center;
+}
+
+.info-link {
+  text-decoration: none;
+  color: black;
+}
+
+.item-info {
+  margin-top: 150px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: rgba(229, 229, 232, 0.65);
+  text-align: center;
 }
