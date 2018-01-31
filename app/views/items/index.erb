@@ -41,23 +41,25 @@
       </nav>
     </div>
 
-    <section class='create-new'>
-      <a class='body-link' href='/items/new'>Create New Item</a>
-    </section>
+    <div class='main-section'>
+      <section class='create-new'>
+        <a class='body-link' href='/items/new'>Create New Item</a>
+      </section>
 
-    <section class="display-grid">
-      <% @items.each do |item| %>
-        <div class='grid-cell'>
-          <div class='cell-title'><h3><a class='body-link' href="/items/<%= item.id %>"><%= item.title %></a></h3></div>
-            <img class='item-image' src="<%= item.image %>"><br>
-            <a href="/items/<%= item.id  %>/edit">Edit</a>
-            <form id='delete' action="/items/<%= item.id %>" method="POST">
-              <input type="hidden" name="_method" value="DELETE">
-              <input type="submit" value="delete"/>
-            </form>
-        </div>
-      <% end %>
-    </section>
+      <section class="display-grid">
+        <% @items.each do |item| %>
+          <div class='grid-cell'>
+            <div class='cell-title'><h3><a class='body-link' href="/items/<%= item.id %>"><%= item.title %></a></h3></div>
+              <img class='item-image' src="<%= item.image %>"><br>
+              <a href="/items/<%= item.id  %>/edit">Edit</a>
+              <form id='delete' action="/items/<%= item.id %>" method="POST">
+                <input type="hidden" name="_method" value="DELETE">
+                <input type="submit" value="delete"/>
+              </form>
+          </div>
+        <% end %>
+      </section>
+    </div>
 
     <footer>
       <p>Email Us: <a class='nav-links' href="mailto:fakeaddress@gmail.com">HR@shopwithnoname.com<a></p>
