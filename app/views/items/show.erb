@@ -1,14 +1,63 @@
-<a href="/items">Item Index</a>
+<!DOCTYPE html>
 
-<h1><%= @item.title %></h1>
-<p><%= @item.description %></p>
-<p><%= @item.price %></p>
-<p><a href="<%= @item.image %>"></p>
-<p><%= @item.merchant_id %></p>
-<p><%= @item.category_id %></p>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Shop With No Name</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/main.css" title="text/css" />
+  </head>
 
-<a href="/items/<%= @item.id  %>/edit">Edit</a>
-<form action="/items/<%= @item.id %>" method="POST">
-  <input type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="delete"/>
-</form>
+  <body>
+    <header>
+      <h1>Item</h1>
+    </header>
+
+    <nav>
+      <div class="dropdown">
+        <button class="dropbtn">Merchants</button>
+          <div class="dropdown-content">
+            <a href="/merchants">Merchant Index</a>
+            <a href="/merchants/new">Create New Merchant</a>
+            <a href="/merchants-dashboard">Merchant Analytics</a>
+          </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Items</button>
+          <div class="dropdown-content">
+            <a href="/items">Item Index</a>
+            <a href="/items/new">Create New Item</a>
+            <a href="/items-dashboard">Item Analytics</a>
+          </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Categories</button>
+          <div class="dropdown-content">
+            <a href="/categories">Category Index</a>
+            <a href="/categories/new">Create New Category</a>
+            <a href="/categories-dashboard">Category Analytics</a>
+          </div>
+      </div>
+    </nav>
+
+    <section>
+      <h1><%= @item.title %></h1>
+      <p><%= @item.description %></p>
+      <p><%= @item.price %></p>
+      <p><a href="<%= @item.image %>"></p>
+      <p><%= @item.merchant_id %></p>
+      <p><%= @item.category_id %></p>
+
+      <a href="/items/<%= @item.id  %>/edit">Edit</a>
+      <form action="/items/<%= @item.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="delete"/>
+      </form>
+    </section>
+
+    <footer>
+      <p>Email Us: <a href="mailto:fakeaddress@gmail.com">HR@shopwithnoname.com<a></p>
+    </footer>
+
+  </body>
+</html>

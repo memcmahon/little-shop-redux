@@ -1,20 +1,70 @@
+<!DOCTYPE html>
 
-<form action="/items/<%= @item.id %>" method="POST">
-  <p>Edit</p>
-  <input type="hidden" name="_method" value="PUT" />
-  <input id='edit-title' type='text' name='item[title]' value="<%= @item.title %>"/><br/><br/>
-  <textarea id='edit-descr' name='item[description]'><%= @item.description %></textarea><br/>
-  <input id='edit-price' type='number' name='item[price]' value="<%= @item.price %>"/><br/><br/>
-  <input id='edit-image' type='text' name='item[image]' value="<%= @item.image %>"/><br/><br/>
-  <select id='edit-merchant' name='item[merchant_id]'>
-    <% @merchants.each do |merchant| %>
-      <option value="<%= merchant.id %>"><%= merchant.name %></option>
-    <% end %>
-  </select><br/><br/>
-  <select id='edit-category' name='item[category_id]'>
-    <% @categories.each do |category| %>
-      <option value="<%= category.id %>"><%= category.name %></option>
-    <% end %>
-  </select><br/><br/>
-  <input id='edit-submit' type='submit'/>
-</form>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Shop With No Name</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/main.css" title="text/css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Edit Item</h1>
+    </header>
+
+    <nav>
+      <div class="dropdown">
+        <button class="dropbtn">Merchants</button>
+          <div class="dropdown-content">
+            <a href="/merchants">Merchant Index</a>
+            <a href="/merchants/new">Create New Merchant</a>
+            <a href="/merchants-dashboard">Merchant Analytics</a>
+          </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Items</button>
+          <div class="dropdown-content">
+            <a href="/items">Item Index</a>
+            <a href="/items/new">Create New Item</a>
+            <a href="/items-dashboard">Item Analytics</a>
+          </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Categories</button>
+          <div class="dropdown-content">
+            <a href="/categories">Category Index</a>
+            <a href="/categories/new">Create New Category</a>
+            <a href="/categories-dashboard">Category Analytics</a>
+          </div>
+      </div>
+    </nav>
+
+    <section>
+      <form action="/items/<%= @item.id %>" method="POST">
+        <p>Edit</p>
+        <input type="hidden" name="_method" value="PUT" />
+        <input id='edit-title' type='text' name='item[title]' value="<%= @item.title %>"/><br/><br/>
+        <textarea id='edit-descr' name='item[description]'><%= @item.description %></textarea><br/>
+        <input id='edit-price' type='number' name='item[price]' value="<%= @item.price %>"/><br/><br/>
+        <input id='edit-image' type='text' name='item[image]' value="<%= @item.image %>"/><br/><br/>
+        <select id='edit-merchant' name='item[merchant_id]'>
+          <% @merchants.each do |merchant| %>
+            <option value="<%= merchant.id %>"><%= merchant.name %></option>
+          <% end %>
+        </select><br/><br/>
+        <select id='edit-category' name='item[category_id]'>
+          <% @categories.each do |category| %>
+            <option value="<%= category.id %>"><%= category.name %></option>
+          <% end %>
+        </select><br/><br/>
+        <input id='edit-submit' type='submit'/>
+      </form>
+    </section>
+
+    <footer>
+      <p>Email Us: <a href="mailto:fakeaddress@gmail.com">HR@shopwithnoname.com<a></p>
+    </footer>
+
+  </body>
+</html>
