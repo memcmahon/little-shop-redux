@@ -151,7 +151,7 @@ RSpec.describe Item do
   end
 
   describe "Database Builder" do
-    xit "loads csv files" do
+    it "loads csv files" do
       items = CSV.open("data/items.csv", headers: true, header_converters: :symbol)
       items.each do |row|
         Item.create(id:           row[:id],
