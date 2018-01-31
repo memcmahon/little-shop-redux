@@ -201,6 +201,18 @@ form {
   background-color: rgba(229,229,232, 0.9);
 }
 
+.edit-item-form {
+  width: 25%;
+  height: 490px;
+  margin-left: 37.25%;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(229,229,232, 0.9);
+}
+
 .edit-form {
   display: flex;
   flex-direction: column;
