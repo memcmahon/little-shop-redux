@@ -42,10 +42,11 @@
       </nav>
     </div>
 
-    <section class='create-new'>
-      <a class='body-link' href='/merchants/new'>Create New Merchant</a>
-    </section>
-
+    <div class='main-section merchants'>
+      <section class='create-new'>
+        <a class='body-link' href='/merchants/new'>Create New Merchant</a>
+      </section>
+      
     <section class="display-grid">
       <% @merchants.each do |merchant| %>
         <div class='grid-cell'>

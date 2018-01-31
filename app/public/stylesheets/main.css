@@ -128,6 +128,7 @@ footer {
   border: solid 0.2px teal;
   padding: 8px;
   list-style-type: none;
+  background-color: rgba(229, 229, 232, 0.65);
 }
 
 .item-image {
@@ -165,12 +166,6 @@ footer {
   background-color: rgb(184, 17, 88);
 }
 
-/*<<<<<<<*/
-.banner header {
-  /*background-image: url("https://images.unsplash.com/photo-1506765336936-bb05e7e06295?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=edbb96ae977af71118e4c12e97c75477&auto=format&fit=crop&w=1350&q=80");
-  background-size: cover;*/
-}
-
 .dashboard-metrics {
   margin-top: 175px;
   margin-left: 5%;
@@ -198,9 +193,33 @@ form {
 
 .main-section {
   background-image: url("https://images.unsplash.com/photo-1506765336936-bb05e7e06295?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=edbb96ae977af71118e4c12e97c75477&auto=format&fit=crop&w=1350&q=80");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: auto;
+}
+
+.items {
+  background-image: url("https://images.unsplash.com/photo-1483992233021-1801812fdacb?ixlib=rb-0.3.5&s=5cddf979650b15523e71d3228a543597&auto=format&fit=crop&w=1650&q=80");
+}
+
+.merchants {
+  background-image: url("https://images.unsplash.com/photo-1465126188505-4f04a0f23a4d?ixlib=rb-0.3.5&s=31f34e16776b5471afd03cc3bbc2ffb7&auto=format&fit=crop&w=1675&q=80");
+}
+
+.categories {
+  background-image: url("https://images.unsplash.com/photo-1468408816249-a6778cf9ace2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a360b86d7d081e927c2d934865ee933c&auto=format&fit=crop&w=1950&q=80");
   background-size: cover;
-  background-position: bottom;
-  height: 700px;
+  height: 800px;
+}
+
+.analytics {
+  height: 800px;
+}
+
+.category-index {
+  height: 800px;
+  background-size: cover;
+  background-image: url("https://images.unsplash.com/photo-1468408816249-a6778cf9ace2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a360b86d7d081e927c2d934865ee933c&auto=format&fit=crop&w=1950&q=80");
 }
 
 .quote {

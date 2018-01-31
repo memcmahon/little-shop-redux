@@ -41,12 +41,14 @@
       </nav>
     </div>
 
-    <section class='dashboard-metrics'>
-      <p>Total Count of Items: <%= @items.count %></p>
-      <p>Average Price of Items: $<%= @items.average_price %></p>
-      <p>Most Recently Created Item: <%= @items.most_recent.title %></p>
-      <p>Oldest Item: <%= @items.oldest.title %></p>
-    </section>
+    <div class='main-section items analytics'>
+      <section class='dashboard-metrics'>
+        <p>Total Count of Items: <%= @items.count %></p>
+        <p>Average Price of Items: $<%= @items.average_price %></p>
+        <p>Most Recently Created Item: <%= @items.most_recent.title %></p>
+        <p>Oldest Item: <%= @items.oldest.title %></p>
+      </section>
+    </div>
 
     <footer>
       <p>Email Us: <a class='nav-links' href="mailto:fakeaddress@gmail.com">HR@shopwithnoname.com<a></p>

@@ -20,22 +20,24 @@
       </nav>
     </div>
 
-    <section class='dashboard-metrics'>
-      <p>Merchant with most items: <%= @merchants.has_most_items.name %></p>
-      <p>Merchant with highest priced item: <%= @merchants.includes_most_expensive_item.name %></p>
-    </section>
+    <div class='main-section merchants'>
+      <section class='dashboard-metrics'>
+        <p>Merchant with most items: <%= @merchants.has_most_items.name %></p>
+        <p>Merchant with highest priced item: <%= @merchants.includes_most_expensive_item.name %></p>
+      </section>
 
-    <h3>Individual Merchant Analytics</h3>
-    <div class="display-grid">
-        <% @merchants.each do |merchant| %>
-          <div class="grid-cell">
-            <p><%= merchant.name %></p>
-            <ul>
-              <li>Number of items: <%= merchant.total_items %></li>
-              <li>Price of all items: $<%= merchant.total_items_price %></li>
-            </ul>
-          </div>
-        <% end %>
+      <h3>Individual Merchant Analytics</h3>
+      <div class="display-grid">
+          <% @merchants.each do |merchant| %>
+            <div class="grid-cell">
+              <p><%= merchant.name %></p>
+              <ul>
+                <li>Number of items: <%= merchant.total_items %></li>
+                <li>Price of all items: $<%= merchant.total_items_price %></li>
+              </ul>
+            </div>
+          <% end %>
+      </div>
     </div>
 
     <footer>
