@@ -47,7 +47,7 @@
 
     <section class="display-grid">
       <% @categories.each do |category| %>
-        <div>
+        <div class='grid-cell'>
         <h3><a class='body-link' href="/categories/<%= category.id %>"><%= category.name %></a></h3>
           <a href="/categories/<%= category.id  %>/edit">Edit</a>
           <form action="/categories/<%= category.id %>" method="POST">
