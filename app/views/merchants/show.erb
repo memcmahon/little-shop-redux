@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html class="merchants">
   <head>
     <meta charset="utf-8" />
     <title>Shop With No Name</title>
@@ -40,21 +40,19 @@
           </div>
       </div>
     </nav>
-
-    <div class='main-section merchants'>
-      <section class="show-display">
-        <h1><%= @merchant.name %></h1>
-        <p><%= @merchant.id %></p>
-        <a href="/merchants/<%= @merchant.id  %>/edit">Edit</a>
-        <form action="/merchants/<%= @merchant.id %>" method="POST">
-          <input type="hidden" name="_method" value="DELETE">
-          <input type="submit" value="delete"/>
-        </form>
-      </section>
-    </div>
+    
+    <section class="info">
+      <h1><%= @merchant.name %></h1>
+      <p>Merchant ID: <%= @merchant.id %></p>
+      <a class='info-link' href="/merchants/<%= @merchant.id  %>/edit">Edit</a>
+      <form action="/merchants/<%= @merchant.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="delete"/>
+      </form>
+    </section>
 
     <footer>
-      <p>Email Us: <a href="mailto:fakeaddress@gmail.com">HR@shopwithnoname.com<a></p>
+      <p>Email Us: <a class='nav-links' href="mailto:fakeaddress@gmail.com">HR@shopwithnoname.com<a></p>
     </footer>
 
   </body>

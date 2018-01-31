@@ -1,10 +1,26 @@
-html, body, ul{
+html, body {
   margin: 0;
   padding: 0;
   border: 0;
   font-family: 'PT Sans Narrow', sans-serif;
-  background-color: rgb(134,187,216);
+  /* background-color: rgb(134,187,216); */
+}
+
+ul {
   list-style-type: none;
+}
+
+h2 {
+  margin: 10px;
+  color: (229, 229, 232);
+  background-color: rgba(229, 229, 232, 0.65);
+  text-align: center;
+}
+
+h4 {
+  /* background-color: rgba(229, 229, 232, 0.65); */
+  margin: 0px;
+  color: black;
 }
 
 header {
@@ -25,7 +41,7 @@ header {
 .dropbtn {
     background-color: rgb(47, 72, 88);
     color: rgb(229,229,232);
-    padding: 16px;
+    padding: 0px;
     font-size: 14px;
     border: none;
     font-family: 'PT Sans Narrow', sans-serif;
@@ -167,8 +183,10 @@ footer {
 }
 
 .dashboard-metrics {
-  margin-top: 175px;
-  margin-left: 5%;
+  padding-top: 120px;
+  margin: 10px;
+  color: rgb(229, 229, 232);
+  font-size: 20px;
 }
 
 form {
@@ -273,10 +291,11 @@ form {
   height: 800px;
 }
 
+
 .categories {
   background-image: url("https://images.unsplash.com/photo-1468408816249-a6778cf9ace2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a360b86d7d081e927c2d934865ee933c&auto=format&fit=crop&w=1950&q=80");
   background-size: cover;
-  height: 800px;
+  /* height: 800px; */
 }
 
 .analytics {
@@ -298,4 +317,29 @@ form {
 
 p.quote {
   margin: 0px;
+}
+
+.info {
+  margin: 10px;
+  background-color: rgba(229, 229, 232, 0.65);
+  text-align: center;
+}
+
+.info-link {
+  text-decoration: none;
+  color: black;
+}
+
+.item-info {
+  margin: 10px;
+  background-color: rgba(229, 229, 232, 0.65);
+  text-align: center;
+}
+
+.item-dashboard-info{
+  margin-top: 150px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: rgba(229, 229, 232, 0.80);
+  text-align: center;
 }

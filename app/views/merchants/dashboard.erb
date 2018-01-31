@@ -43,12 +43,12 @@
     </div>
 
     <div class='main-section merchants'>
-      <section class='dashboard-metrics'>
-        <p>Merchant with most items: <%= @merchants.has_most_items.name %></p>
-        <p>Merchant with highest priced item: <%= @merchants.includes_most_expensive_item.name %></p>
+      <section class='item-dashboard-info'>
+        <h1>Merchant with most items: <%= @merchants.has_most_items.name %></h1>
+        <h1>Merchant with highest priced item: <%= @merchants.includes_most_expensive_item.name %></h1>
       </section>
 
-      <h3>Individual Merchant Analytics</h3>
+      <h2>Individual Merchant Analytics</h2>
       <div class="display-grid">
           <% @merchants.each do |merchant| %>
             <div class="grid-cell">

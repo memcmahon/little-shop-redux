@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html class="items">
   <head>
     <meta charset="utf-8" />
     <title>Shop With No Name</title>
@@ -14,6 +14,7 @@
     </header>
 
     <nav>
+      <a class='dropbtn' href="/">Home</a>
       <div class="dropdown">
         <button class="dropbtn">Merchants</button>
           <div class="dropdown-content">
@@ -40,15 +41,15 @@
       </div>
     </nav>
 
-    <section>
+    <section class="item-info">
       <h1><%= @item.title %></h1>
       <p><%= @item.description %></p>
-      <p><%= @item.price %></p>
-      <p><a href="<%= @item.image %>"></p>
-      <p><%= @item.merchant.name %></p>
-      <p><%= @item.category.name %></p>
+      <p>Price: <%= @item.price %></p>
+      <img class="item-image" src="<%= @item.image %>">
+      <p>Merchant: <%= @item.merchant.name %></p>
+      <p>Category: <%= @item.category.name %></p>
 
-      <a href="/items/<%= @item.id  %>/edit">Edit</a>
+      <a class="info-link" href="/items/<%= @item.id  %>/edit">Edit</a>
       <form action="/items/<%= @item.id %>" method="POST">
         <input type="hidden" name="_method" value="DELETE">
         <input type="submit" value="delete"/>
@@ -56,7 +57,7 @@
     </section>
 
     <footer>
-      <p>Email Us: <a href="mailto:fakeaddress@gmail.com">HR@shopwithnoname.com<a></p>
+      <p>Email Us: <a class="nav-links" href="mailto:fakeaddress@gmail.com">HR@shopwithnoname.com<a></p>
     </footer>
 
   </body>
