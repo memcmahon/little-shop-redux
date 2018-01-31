@@ -42,8 +42,8 @@
     </div>
 
     <section class='dashboard-metrics'>
-      <p>Category with most expensive item: <%= @includes_most_expensive_item %></p>
-      <p>Category with least expensive item: <%= @includes_least_expensive_item %></p>
+      <p>Category with most expensive item: <%= @categories.includes_most_expensive_item %></p>
+      <p>Category with least expensive item: <%= @categories.includes_least_expensive_item %></p>
       <p>Average item price per category:
         <% @categories.each do |category| %>
           <ul>
