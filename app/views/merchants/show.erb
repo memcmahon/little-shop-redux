@@ -10,10 +10,11 @@
 
   <body>
     <header>
-      <h1>Create New Merchant</h1>
+      <h1>Merchant Info</h1>
     </header>
 
     <nav>
+      <a class='dropbtn' href="/">Home</a>
       <div class="dropdown">
         <button class="dropbtn">Merchants</button>
           <div class="dropdown-content">
@@ -40,15 +41,17 @@
       </div>
     </nav>
 
-    <section class="create-form">
-      <h1><%= @merchant.name %></h1>
-      <p><%= @merchant.id %></p>
-      <a href="/merchants/<%= @merchant.id  %>/edit">Edit</a>
-      <form action="/merchants/<%= @merchant.id %>" method="POST">
-        <input type="hidden" name="_method" value="DELETE">
-        <input type="submit" value="delete"/>
-      </form>
-    </section>
+    <div class='main-section merchants'>
+      <section class="show-display">
+        <h1><%= @merchant.name %></h1>
+        <p><%= @merchant.id %></p>
+        <a href="/merchants/<%= @merchant.id  %>/edit">Edit</a>
+        <form action="/merchants/<%= @merchant.id %>" method="POST">
+          <input type="hidden" name="_method" value="DELETE">
+          <input type="submit" value="delete"/>
+        </form>
+      </section>
+    </div>
 
     <footer>
       <p>Email Us: <a href="mailto:fakeaddress@gmail.com">HR@shopwithnoname.com<a></p>
