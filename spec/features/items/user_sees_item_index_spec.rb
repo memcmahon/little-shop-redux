@@ -75,7 +75,7 @@ describe "user sees item index" do
                            category_id: 1)
 
       visit '/items'
-      click_link('Create New Item')
+      click_link('Create New Item', match: :first)
 
       expect(current_path).to eq("/items/new")
     end

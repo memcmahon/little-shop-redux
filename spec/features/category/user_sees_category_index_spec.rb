@@ -47,7 +47,7 @@ describe "user sees category index" do
       category_2 = Category.create(name: "Evil Step-Mother")
 
       visit '/categories'
-      click_link('Create New Category')
+      click_link('Create New Category', match: :first)
 
       expect(current_path).to eq("/categories/new")
     end

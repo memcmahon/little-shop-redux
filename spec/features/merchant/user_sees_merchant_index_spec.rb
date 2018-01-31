@@ -34,7 +34,7 @@ describe "user sees merchant index" do
       merchant_1 = Merchant.create(id: 123, name: "Sally")
 
       visit '/merchants'
-      click_link('Edit') 
+      click_link('Edit')
 
       expect(current_path).to eq("/merchants/#{merchant_1.id}/edit")
     end
@@ -45,7 +45,7 @@ describe "user sees merchant index" do
       merchant_1 = Merchant.create(id: 123, name: "Sally")
 
       visit '/merchants'
-      click_link('Create New Merchant')
+      click_link('Create New Merchant', match: :first)
 
       expect(current_path).to eq("/merchants/new")
     end
