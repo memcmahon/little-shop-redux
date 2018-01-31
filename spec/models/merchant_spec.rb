@@ -28,7 +28,7 @@ RSpec.describe Merchant do
   end
 
   describe "Has metric functionality" do
-    it "can calculate item_count_per_merchant_id" do
+    xit "can calculate item_count_per_merchant_id" do
       merchant_1 = Merchant.create(id: 123, name: "Sally")
       merchant_2 = Merchant.create(id: 456, name: "Billy")
       item_1 = Item.create(title: "soggy socks",
