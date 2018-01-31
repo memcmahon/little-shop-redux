@@ -46,19 +46,18 @@
         <a class='body-link' href='/categories/new'>Create New Category</a>
       </section>
 
-      <section class="display-grid">
-        <% @categories.each do |category| %>
-          <div class='grid-cell'>
-          <h3><a class='body-link' href="/categories/<%= category.id %>"><%= category.name %></a></h3>
-            <a href="/categories/<%= category.id  %>/edit">Edit</a>
-            <form action="/categories/<%= category.id %>" method="POST">
-              <input type="hidden" name="_method" value="DELETE">
-              <input type="submit" value="delete"/>
-            </form>
-          </div>
-        <% end %>
-      </section>
-    </div>
+    <section class="display-grid">
+      <% @categories.each do |category| %>
+        <div class='grid-cell'>
+        <h3><a class='body-link' href="/categories/<%= category.id %>"><%= category.name %></a></h3>
+          <a class='nav-links' href="/categories/<%= category.id  %>/edit">Edit</a>
+          <form action="/categories/<%= category.id %>" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="submit" value="delete"/>
+          </form>
+        </div>
+      <% end %>
+    </section>
 
     <footer>
       <p>Email Us: <a class='nav-links' href="mailto:fakeaddress@gmail.com">HR@shopwithnoname.com<a></p>
