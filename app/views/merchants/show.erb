@@ -1,11 +1,58 @@
-<a href="/merchants">Merchant Index</a>
+<!DOCTYPE html>
 
-<h1><%= @merchant.name %></h1>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Shop With No Name</title>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/main.css" title="text/css" />
+  </head>
 
-<p><%= @merchant.id %></p>
+  <body>
+    <header>
+      <h1>Create New Merchant</h1>
+    </header>
 
-<a href="/merchants/<%= @merchant.id  %>/edit">Edit</a>
-<form action="/merchants/<%= @merchant.id %>" method="POST">
-  <input type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="delete"/>
-</form>
+    <nav>
+      <div class="dropdown">
+        <button class="dropbtn">Merchants</button>
+          <div class="dropdown-content">
+            <a href="/merchants">Merchant Index</a>
+            <a href="/merchants/new">Create New Merchant</a>
+            <a href="/merchants-dashboard">Merchant Analytics</a>
+          </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Items</button>
+          <div class="dropdown-content">
+            <a href="/items">Item Index</a>
+            <a href="/items/new">Create New Item</a>
+            <a href="/items-dashboard">Item Analytics</a>
+          </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Categories</button>
+          <div class="dropdown-content">
+            <a href="/categories">Category Index</a>
+            <a href="/categories/new">Create New Category</a>
+            <a href="/categories-dashboard">Category Analytics</a>
+          </div>
+      </div>
+    </nav>
+
+    <section class="create-form">
+      <h1><%= @merchant.name %></h1>
+      <p><%= @merchant.id %></p>
+      <a href="/merchants/<%= @merchant.id  %>/edit">Edit</a>
+      <form action="/merchants/<%= @merchant.id %>" method="POST">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="delete"/>
+      </form>
+    </section>
+
+    <footer>
+      <p>Email Us: <a href="mailto:fakeaddress@gmail.com">HR@shopwithnoname.com<a></p>
+    </footer>
+
+  </body>
+</html>

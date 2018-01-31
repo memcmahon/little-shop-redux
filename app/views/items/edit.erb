@@ -14,24 +14,45 @@
     </header>
 
     <nav>
-        <a class='nav-links' href="/merchants">Merchant Index</a>
-        <a class='nav-links' href="/categories">Category Index</a>
-        <a class='nav-links' href="/items">Item Index</a>
+      <div class="dropdown">
+        <button class="dropbtn">Merchants</button>
+          <div class="dropdown-content">
+            <a href="/merchants">Merchant Index</a>
+            <a href="/merchants/new">Create New Merchant</a>
+            <a href="/merchants-dashboard">Merchant Analytics</a>
+          </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Items</button>
+          <div class="dropdown-content">
+            <a href="/items">Item Index</a>
+            <a href="/items/new">Create New Item</a>
+            <a href="/items-dashboard">Item Analytics</a>
+          </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Categories</button>
+          <div class="dropdown-content">
+            <a href="/categories">Category Index</a>
+            <a href="/categories/new">Create New Category</a>
+            <a href="/categories-dashboard">Category Analytics</a>
+          </div>
+      </div>
     </nav>
 
     <section class='form-page'>
       <form action="/items/<%= @item.id %>" method="POST">
         <p>Edit</p>
         <input type="hidden" name="_method" value="PUT" />
-        <input id='edit-title' type='text' name='item[title]' value="<%= @item.title %>"/><br>
-        <textarea id='edit-descr' name='item[description]'><%= @item.description %></textarea><br>
-        <input id='edit-price' type='number' name='item[price]' value="<%= @item.price %>"/><br>
-        <input id='edit-image' type='text' name='item[image]' value="<%= @item.image %>"/><br>
-        <select id='edit-merchant' name='item[merchant_id]'><br>
+        <input id='edit-title' type='text' name='item[title]' value="<%= @item.title %>"/><br/>
+        <textarea id='edit-descr' name='item[description]'><%= @item.description %></textarea>
+        <input id='edit-price' type='number' name='item[price]' value="<%= @item.price %>"/><br/>
+        <input id='edit-image' type='text' name='item[image]' value="<%= @item.image %>"/><br/>
+        <select id='edit-merchant' name='item[merchant_id]'>
           <% @merchants.each do |merchant| %>
             <option value="<%= merchant.id %>"><%= merchant.name %></option>
           <% end %>
-        </select><br/>
+        </select><br/><br/>
         <select id='edit-category' name='item[category_id]'>
           <% @categories.each do |category| %>
             <option value="<%= category.id %>"><%= category.name %></option>

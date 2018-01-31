@@ -15,9 +15,30 @@
         <h1>Merchants</h1>
       </header>
       <nav>
-          <a class='nav-links' href="/">Home</a>
-          <a class='nav-links' href="/categories">Category Index</a>
-          <a class='nav-links' href="/items">Item Index</a>
+        <div class="dropdown">
+          <button class="dropbtn">Merchants</button>
+            <div class="dropdown-content">
+              <a href="/merchants">Merchant Index</a>
+              <a href="/merchants/new">Create New Merchant</a>
+              <a href="/merchants-dashboard">Merchant Analytics</a>
+            </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Items</button>
+            <div class="dropdown-content">
+              <a href="/items">Item Index</a>
+              <a href="/items/new">Create New Item</a>
+              <a href="/items-dashboard">Item Analytics</a>
+            </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Categories</button>
+            <div class="dropdown-content">
+              <a href="/categories">Category Index</a>
+              <a href="/categories/new">Create New Category</a>
+              <a href="/categories-dashboard">Category Analytics</a>
+            </div>
+        </div>
       </nav>
     </div>
 
@@ -27,7 +48,7 @@
 
     <section class="display-grid">
       <% @merchants.each do |merchant| %>
-        <div>
+        <div class='grid-cell'>
         <h3><a class='body-link' href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></h3>
           <a href="/merchants/<%= merchant.id  %>/edit">Edit</a>
           <form action="/merchants/<%= merchant.id %>" method="POST">

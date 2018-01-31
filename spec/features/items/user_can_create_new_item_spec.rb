@@ -18,6 +18,8 @@ describe "user can create new item" do
       merchant = Merchant.create(name: "Jose")
       category = Category.create(name: 'Dopey')
 
+      expect(Item.all.count).to eq(2)
+
       visit '/items/new'
       fill_in('new-title', :with => 'hat')
       fill_in('new-descr', :with => 'lovely hat made from organic mushrooms')
@@ -28,9 +30,8 @@ describe "user can create new item" do
       click_button('new-submit')
       new_item = Item.find_by(title: 'hat')
 
-      # binding.pry
       expect(current_path).to eq('/items')
-      expect(Item.all.count).to eq(3) # <---- actual 2
+      expect(Item.all.count).to eq(3) 
       expect(page).to have_content('hat')
       expect(new_item.id).to eq(3)
       expect(new_item.merchant.name).to eq('Jose')
