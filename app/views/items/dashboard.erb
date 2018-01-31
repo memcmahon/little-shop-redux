@@ -43,10 +43,10 @@
     </div>
 
     <div>
-      <section class='item-info'>
-        <h4>Total Count of Items: <%= @items.count %></h4>
-        <h4>Average Price of Items: $<%= @items.average_price %></h4>
-        <h4>Most Recently Created Item: <%= @items.most_recent.title %></h4>
+      <section class='item-dashboard-info'>
+        <h4>Total Count of Items: <%= @items.count %></h4><br>
+        <h4>Average Price of Items: $<%= @items.average_price %></h4><br>
+        <h4>Most Recently Created Item: <%= @items.most_recent.title %></h4><br>
         <h4>Oldest Item: <%= @items.oldest.title %></h4>
       </section>
     </div>
