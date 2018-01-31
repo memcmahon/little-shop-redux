@@ -120,11 +120,19 @@ footer {
   font-weight: bold;
   font-size: 20px;
   color: rgb(47,72,88);
+  text-decoration: none;
+}
+
+.new-link {
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
 }
 
 .cell-title {
   height: 75px;
   overflow: hidden;
+  text-align: center;
 }
 
 .display-grid {
@@ -134,7 +142,6 @@ footer {
   overflow: scroll;
   margin: 10px;
   margin-bottom: 100px;
-  border: solid 0.6px teal;
 }
 
 .grid-cell {
