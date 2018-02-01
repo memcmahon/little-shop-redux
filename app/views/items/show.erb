@@ -46,8 +46,8 @@
       <p><%= @item.description %></p>
       <p>Price: $<%= @item.price_to_dollars %></p>
       <img class="item-image" src="<%= @item.image %>">
-      <p>Merchant: <%= @item.merchant.name %></p>
-      <p>Category: <%= @item.category.name %></p>
+      <p>Merchant: <a class="info-link" href="/merchants/<%= @item.merchant.id %>"><%= @item.merchant.name %></a></p>
+      <p>Category: <a class="info-link" href="/categories/<%= @item.category.id %>"><%= @item.category.name %></a></p>
 
       <a class="info-link" href="/items/<%= @item.id  %>/edit">Edit</a>
       <form action="/items/<%= @item.id %>" method="POST">
