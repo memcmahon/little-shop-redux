@@ -52,7 +52,7 @@
       <div class="display-grid">
           <% @merchants.each do |merchant| %>
             <div class="grid-cell">
-              <p><%= merchant.name %></p>
+              <p><a class="info-link" href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></p>
               <ul>
                 <li>Number of items: <%= merchant.total_items %></li>
                 <li>Price of all items: $<%= merchant.total_items_price %></li>
