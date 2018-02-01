@@ -58,7 +58,7 @@ describe "user can edit existing item" do
       edited_item = Item.find(1)
 
       expect(current_path).to eq('/items/1')
-      expect(page).to have_content('1950')
+      expect(page).to have_content('$19.5')
       expect(edited_item.price).to eq(1950)
     end
 

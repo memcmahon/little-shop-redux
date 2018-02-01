@@ -44,7 +44,7 @@
     <section class="item-info">
       <h1><%= @item.title %></h1>
       <p><%= @item.description %></p>
-      <p>Price: <%= @item.price %></p>
+      <p>Price: $<%= @item.price_to_dollars %></p>
       <img class="item-image" src="<%= @item.image %>">
       <p>Merchant: <%= @item.merchant.name %></p>
       <p>Category: <%= @item.category.name %></p>
