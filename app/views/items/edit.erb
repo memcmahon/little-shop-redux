@@ -44,22 +44,46 @@
     <div class='main-section items analytics'>
       <section class='edit-item-form'>
         <form action="/items/<%= @item.id %>" method="POST">
-          <p>Edit</p>
+          <h3>Edit</h3>
           <input type="hidden" name="_method" value="PUT" />
-          <input id='edit-title' type='text' name='item[title]' value="<%= @item.title %>"/><br/>
-          <textarea id='edit-descr' name='item[description]'><%= @item.description %></textarea>
-          <input id='edit-price' type='number' name='item[price]' value="<%= @item.price %>"/><br/>
-          <input id='edit-image' type='text' name='item[image]' value="<%= @item.image %>"/><br/>
-          <select id='edit-merchant' name='item[merchant_id]'>
-            <% @merchants.each do |merchant| %>
-              <option value="<%= merchant.id %>"><%= merchant.name %></option>
-            <% end %>
-          </select><br/><br/>
-          <select id='edit-category' name='item[category_id]'>
-            <% @categories.each do |category| %>
-              <option value="<%= category.id %>"><%= category.name %></option>
-            <% end %>
-          </select><br/>
+          <div>
+            <p>Title:<br>
+              <input id='edit-title' type='text' name='item[title]' value="<%= @item.title %>"/><br/>
+            </p>
+          </div>
+          <div>
+            <p>Description:<br>
+              <textarea id='edit-descr' name='item[description]'><%= @item.description %></textarea>
+            </p>
+          </div>
+          <div>
+            <p>Price (in cents):<br>
+            <input id='edit-price' type='number' name='item[price]' value="<%= @item.price %>"/><br/>
+            </p>
+          </div>
+          <div>
+            <p>Image URL:<br>
+            <input id='edit-image' type='text' name='item[image]' value="<%= @item.image %>"/><br/>
+            </p>
+          </div>
+          <div>
+            <p>Merchant:<br>
+            <select id='edit-merchant' name='item[merchant_id]'>
+              <% @merchants.each do |merchant| %>
+                <option value="<%= merchant.id %>"><%= merchant.name %></option>
+              <% end %>
+            </select>
+            </p>
+          </div>
+          <div>
+            <p>Category:<br>
+            <select id='edit-category' name='item[category_id]'>
+              <% @categories.each do |category| %>
+                <option value="<%= category.id %>"><%= category.name %></option>
+              <% end %>
+            </select><br/>
+            </p>
+          </div>
           <input id='edit-submit' type='submit'/>
         </form>
         <div class="quote">
