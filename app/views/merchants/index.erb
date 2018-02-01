@@ -51,7 +51,7 @@
     <section class="display-grid">
       <% @merchants.each do |merchant| %>
         <div class='grid-cell'>
-        <h3><a class='body-link' href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></h3>
+        <h3><a class='info-link' href="/merchants/<%= merchant.id %>"><%= merchant.name %></a></h3>
           <a class='nav-links' href="/merchants/<%= merchant.id  %>/edit">Edit</a>
           <form action="/merchants/<%= merchant.id %>" method="POST">
             <input type="hidden" name="_method" value="DELETE">

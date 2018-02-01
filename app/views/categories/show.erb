@@ -51,6 +51,16 @@
       </form>
     </section>
 
+    <h2>Items</h2>
+
+    <section class="display-grid">
+      <% @category.items.each do |item| %>
+        <div class="grid-cell">
+          <p><a class="info-link" href="/items/<%= item.id %>"><%= item.title %></a></p>
+        </div>
+      <% end %>
+    </section>
+
     <footer>
       <p>Email Us: <a class='nav-links' href="mailto:fakeaddress@gmail.com">HR@shopwithnoname.com<a></p>
     </footer>
