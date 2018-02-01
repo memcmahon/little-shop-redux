@@ -94,6 +94,24 @@ RSpec.describe Item do
   end
 
   describe "has metric functionality" do
+    it "translates price price of items to float" do
+      item_1 = Item.create(title: "soggy socks",
+                           description: "yikes my feet are wet!",
+                           price: 1130,
+                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
+                           merchant_id: 12334145,
+                           category_id: 1)
+      item_2 = Item.create(title: "ripped jeans",
+                           description: "They'll make you really cool, bro.",
+                           price: 531,
+                           image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/SnowWhite44.jpg",
+                           merchant_id: 12334145,
+                           category_id: 2)
+
+      expect(item_1.price_to_dollars).to eq(11.3)
+      expect(item_2.price_to_dollars).to eq(5.31)
+    end
+
     it "calculates average price of items" do
       item_1 = Item.create(title: "soggy socks",
                            description: "yikes my feet are wet!",

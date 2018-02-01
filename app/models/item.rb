@@ -12,6 +12,10 @@ class Item < ActiveRecord::Base
   belongs_to :merchant
   belongs_to :category
 
+  def price_to_dollars
+    (price / 100.0).round(2)
+  end
+
   def self.average_price
     (average(:price) / 100).to_f.round(2)
   end
