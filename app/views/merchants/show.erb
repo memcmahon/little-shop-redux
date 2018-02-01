@@ -56,7 +56,7 @@
     <section class="display-grid">
       <% @merchant.items.each do |item| %>
         <div class="grid-cell">
-          <p><a class="body-link" href="/items/<%= item.id %>"><%= item.title %></a></p>
+          <p><a class="info-link" href="/items/<%= item.id %>"><%= item.title %></a></p>
         </div>
       <% end %>
     </section>
