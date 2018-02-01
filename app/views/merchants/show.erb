@@ -40,7 +40,7 @@
           </div>
       </div>
     </nav>
-    
+
     <section class="info">
       <h1><%= @merchant.name %></h1>
       <p>Merchant ID: <%= @merchant.id %></p>
@@ -51,6 +51,15 @@
       </form>
     </section>
 
+    <h2>Items</h2>
+
+    <section class="display-grid">
+      <% @merchant.items.each do |item| %>
+        <div class="grid-cell">
+          <p><a class="body-link" href="/items/<%= item.id %>"><%= item.title %></a></p>
+        </div>
+      <% end %>
+    </section>
     <footer>
       <p>Email Us: <a class='nav-links' href="mailto:fakeaddress@gmail.com">HR@shopwithnoname.com<a></p>
     </footer>
