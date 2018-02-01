@@ -240,7 +240,7 @@ form {
 
 .new-item-form {
   width: 25%;
-  height: 55%;
+  height: 85%;
   margin-left: 37.25%;
   display: flex;
   justify-content: center;
@@ -255,7 +255,7 @@ form {
   margin-top: 5px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
   background-color: rgba(229,229,232, 0.9);
 }
